@@ -1,9 +1,44 @@
 import React from "react";
+import logo from '../../src/assets/logo.png'
 
-default export function NavBar() {
+export default function NavBar() {
+    
+    
     return (
-        <h1>Never Use alone</h1>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div className="container-fluid">
+             <img src={logo} alt="Never Use Alone logo" height={100} />
 
-        
-    )
+            <a className="navbar-brand" href="#">Never Use Alone</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <a className="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">FAQ</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Resources</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Contact Us</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">12 Step Alternatives</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Participant Rights</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Mandy's Line Application</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+);
 }

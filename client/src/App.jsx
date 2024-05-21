@@ -7,7 +7,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 
-import { NavBar } from './components/NavBar';
+import NavBar from './components/NavBar';
 
 import { setContext } from '@apollo/client/link/context';
 
@@ -35,8 +35,10 @@ function App() {
   
   return (
     <ApolloProvider client={client}>
-      <NavBar />
-      <Outlet/>
+      <NavBar className='container-fluid mb-3'/>
+      <div className='outletStyle' >
+        <Outlet />
+      </div>
     </ApolloProvider>
   )
 }

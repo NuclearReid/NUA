@@ -1,15 +1,16 @@
-import Signup from "../../components/SignupForm";
-import LoginForm from "../../components/LoginForm";
-import Profile from "../Profile";
-import Auth from "../../utils/auth";
+import FAQ from '../../components/FAQ';
+import About from '../../components/About';
+import StatsTable from '../../components/StatsTable';
+import LandingHeader from '../../components/LandingHeader';
 
 export default function Landing() {
-
-    return (
-      <>
-        
-
-      </>
-    );
-
+    
+  return (
+    <>
+        <LandingHeader />
+        <About />
+        <StatsTable />      
+        <FAQ />
+    </>
+  );
 }
