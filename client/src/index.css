@@ -51,3 +51,8 @@
 .statistics {
   background-color: aqua;
 }
+.stat {
+  display: inline-block;
+  text-align: center;
+  margin: 0 1rem;
+}

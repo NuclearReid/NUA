@@ -36,7 +36,7 @@ const resolvers = {
             return {token, user}
         },
         login: async (parent, {email, password }) => {
-            const user = await User.findOne({ email });//.populate('foo');
+            const user = await User.findOne({ email });
 
             if(!user) {
                 throw AuthenticationError;
@@ -47,7 +47,24 @@ const resolvers = {
             }
             const token = signToken(user);
             return {token, user};
-        }
+        },
+        addStats: async (parent, {callsRecieved, peopleServed, reversals}, context) => {         
+            if (context.user) {
+                const updatedUser = await User.findByIdAndUpdate(
+                    context.user._id,
+                    {
+                        $set: {
+                            callsRecieved: callsRecieved,
+                            peopleServed: peopleServed,
+                            reversals: reversals,
+                        }
+                    },
+                    {new: true}
+                );
+                return updatedUser;
+            }
+            throw AuthenticationError;
+        },
     }
 }
 

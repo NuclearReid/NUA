@@ -5,6 +5,9 @@ const typeDefs = gql`
         _id: ID
         email: String!
         password: String!
+        callsRecieved: Int
+        peopleServed: Int
+        reversals: Int
     }
 
     type Auth {
@@ -28,6 +31,11 @@ const typeDefs = gql`
             email: String!
             password: String!
         ): Auth
+        addStats(
+            callsRecieved: Int
+            peopleServed: Int
+            reversals: Int
+        ): User
     }
 `;
 

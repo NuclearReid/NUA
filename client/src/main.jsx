@@ -9,6 +9,7 @@ import NoMatch from "./pages/NoMatch";
 import Landing from "./pages/Landing";
 import TestPage from "./pages/Profile";
 import LoggedIn from "./pages/LoggedIn";
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -21,13 +22,14 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
-        path: "/Profile",
+        path: "/profile",
         element: <TestPage />,
       },
       {
-        path: "/LoggedIn",
-        element: <LoggedIn />,
+        path: "/login",
+        element: <Login />,
       },
+
     ],
   },
 ]);

@@ -13,12 +13,15 @@ const userSchema = new Schema({
         required: true
         // set up requirments for the password later on
     },
-    // foo: [
-    //     {
-    //         type: Schema.Types.ObjectId,
-    //         ref: 'Foo',
-    //     }
-    // ]
+    callsRecieved: {
+        type: Number,
+    },
+    peopleServed: {
+        type: Number,
+    },
+    reversals: {
+        type: Number,
+    }
 });
 
 userSchema.pre('save', async function (next) {
