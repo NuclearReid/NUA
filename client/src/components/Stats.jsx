@@ -1,8 +1,4 @@
-export default function StatsTable() {
-    
-    // I want to make an admin portal where they can update the numbers
-
-    
+export default function StatsTable({callsRecieved, peopleServed, reversals}) {   
 
     return (
         <div className="statistics text-center p-5">
@@ -11,7 +7,7 @@ export default function StatsTable() {
             <div className="text-center p-1 fs-2">
                 <div className="stat">
                     <div>
-                        <h3>33,000+</h3>
+                        <h3>{callsRecieved}+</h3>
                     </div>
                     <div>
                         <p> Calls Recieved </p>
@@ -19,7 +15,7 @@ export default function StatsTable() {
                 </div>
                 <div className="stat">
                     <div>
-                        <h3>11,500+</h3>
+                        <h3>{peopleServed}+</h3>
                     </div>
                     <div>
                         <p> People Served </p>
@@ -27,7 +23,7 @@ export default function StatsTable() {
                 </div>
                 <div className="stat">
                     <div>
-                        <h3>110+</h3>
+                        <h3>{reversals}+</h3>
                     </div>
                     <div>
                         <p> Reversals </p>

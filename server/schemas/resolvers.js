@@ -18,7 +18,7 @@ const resolvers = {
             throw AuthenticationError;
         },
         admin: async () => {
-            return User.findOne({email:'admin'});
+            return User.findOne({email:'Admin'});
         }
     },
     Mutation: {
