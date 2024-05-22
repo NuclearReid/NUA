@@ -32,7 +32,7 @@ const typeDefs = gql`
             email: String!
             password: String!
         ): Auth
-        addStats(
+        setStats(
             callsRecieved: Int
             peopleServed: Int
             reversals: Int

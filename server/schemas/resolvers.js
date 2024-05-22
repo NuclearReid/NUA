@@ -43,17 +43,15 @@ const resolvers = {
             const token = signToken(user);
             return {token, user};
         },
-        addStats: async (parent, {callsRecieved, peopleServed, reversals}, context) => {         
+        setStats: async (parent, {callsRecieved, peopleServed, reversals}, context) => {         
             if (context.user) {
+                // This is here to check if something is put in the stat input form and if there isn't anything, it won't update that stat as null
+                const update = Object.fromEntries(
+                    Object.entries({callsRecieved, peopleServed, reversals}).filter(([key, value]) => value !== null)
+                );
                 const updatedUser = await User.findByIdAndUpdate(
                     context.user._id,
-                    {
-                        $set: {
-                            callsRecieved: callsRecieved,
-                            peopleServed: peopleServed,
-                            reversals: reversals,
-                        }
-                    },
+                    {$set: update },
                     {new: true}
                 );
                 return updatedUser;

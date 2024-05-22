@@ -14,7 +14,7 @@ export default function StatsTable() {
                         <h3>33,000+</h3>
                     </div>
                     <div>
-                        <p> Calls Received </p>
+                        <p> Calls Recieved </p>
                     </div>
                 </div>
                 <div className="stat">

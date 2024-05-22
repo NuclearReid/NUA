@@ -27,3 +27,22 @@ export const LOGIN = gql`
     }
   }
 `;
+
+export const SET_STATS = gql`
+  mutation Set_Stats(
+      $callsRecieved: Int 
+      $peopleServed: Int 
+      $reversals: Int
+    ) {
+    setStats(
+      callsRecieved: $callsRecieved 
+      peopleServed: $peopleServed 
+      reversals: $reversals
+    ) {
+      email
+      callsRecieved
+      peopleServed
+      reversals
+    }
+  }
+`;
