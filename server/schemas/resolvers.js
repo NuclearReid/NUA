@@ -12,25 +12,20 @@ const resolvers = {
             if (context.user) {
                 const foundUser = await User.findOne({
                     _id: context.user._id,
-                }); // if i have more models attached to the user
-                //.populate({
-                    //path: 'foo',
-                // });
+                }); 
                 return foundUser
             }
             throw AuthenticationError;
+        },
+        admin: async () => {
+            return User.findOne({email:'admin'});
         }
-
     },
     Mutation: {
         addUser: async (parent, {email, password }) => {
-            // const foo = await Foo.create({
-            //     boo: '',
-            // });
             const user = await User.create({
                 email,
                 password,
-                // foo: foo._id,
             });
             const token = signToken(user);
             return {token, user}

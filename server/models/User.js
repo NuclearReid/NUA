@@ -2,11 +2,11 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema({
+    // this is listed as 'email' but it doesn't need to be an email
     email: {
         type: String,
         required: true,
         unique: true,
-        // set up the regex/validator for this to be an email
     },
     password: {
         type: String,

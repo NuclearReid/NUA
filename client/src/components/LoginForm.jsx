@@ -25,6 +25,7 @@ export default function Login() {
             const token = mutationResponse.data.login.token;
             Auth.login(token);
             console.log(token);
+            window.location.assign('/adminportal');
         } catch( error ) {
             console.error(error);
         }
@@ -45,7 +46,7 @@ export default function Login() {
                 <div className="mb-3">
                     <label htmlFor="exampleLoginInputEmail" className="form-label">Email</label>
                     <input 
-                        type="email" 
+                        type="username" 
                         className="form-control" 
                         id="lgoinEmailField" 
                         aria-describedby="loginEmailHelp" 

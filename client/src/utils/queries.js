@@ -8,3 +8,14 @@ export const QUERY_ME = gql`
         }
     }
 `;
+
+export const QUERY_ADMIN = gql`
+    query Admin {
+        admin {
+            email
+            callsRecieved
+            peopleServed
+            reversals
+        }
+    }
+`;
