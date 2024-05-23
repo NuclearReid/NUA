@@ -1,6 +1,9 @@
 .outletStyle {
   margin-top: 7rem;
 }
+#faq{
+  margin-top: -1rem;
+}
 
 .landing {
   align-items:start;

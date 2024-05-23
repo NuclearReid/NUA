@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../../src/assets/logo.png'
+import FAQ from '../components/FAQ'
 
 export default function NavBar() {
     
@@ -18,8 +19,9 @@ export default function NavBar() {
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
+                    {/* work on this tomorrow, make it so the navbar doesn't cover any of the FAQ */}
                     <li className="nav-item">
-                        <a className="nav-link" href="#">FAQ</a>
+                        <a className="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Resources</a>
