@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 import { setContext } from '@apollo/client/link/context';
 
@@ -39,6 +40,7 @@ function App() {
       <div className='outletStyle' >
         <Outlet />
       </div>
+      <Footer />
     </ApolloProvider>
   )
 }

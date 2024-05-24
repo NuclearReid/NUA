@@ -1,4 +1,5 @@
 import FAQItem from './FAQItem';
+
 export default function FAQ() {
     const faqs = [
         {
@@ -65,10 +66,9 @@ export default function FAQ() {
     ]
 
     return (
-        <div className="accordion accordion-flush" id="accordionFlushExample">
+        <div className="accordion accordion-flush faqSection" id="accordionFlushExample">
             {faqs.map((faq, index) => (
                 <FAQItem key={index} id={index} question={faq.question} answer={faq.answer} />
-
             ))}
         </div>
     )

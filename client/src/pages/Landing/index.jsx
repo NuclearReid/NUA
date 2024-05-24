@@ -23,10 +23,16 @@ export default function Landing() {
           callsRecieved={callsRecieved}
           peopleServed={peopleServed}
           reversals={reversals}/>
-        <h2 id='faq' className='text-center' style={{paddingTop: '3rem', paddingBottom: '2rem'}}>
+        <h2 id='faq' className='text-center' 
+            style={{paddingTop: '3rem', 
+            // paddingBottom: '2rem'
+            }}
+            >
           FAQ
         </h2>
-        <div  className='col-7' style={{paddingLeft: '2rem'}} >
+        <div  className='col-sm-7' 
+              // style={{paddingLeft: '2rem'}} 
+              >
             <FAQ />
         </div>
     </>

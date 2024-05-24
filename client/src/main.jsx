@@ -10,6 +10,7 @@ import Landing from "./pages/Landing";
 // import TestPage from "./pages/Profile";
 // import LoggedIn from "./pages/LoggedIn";
 import AdminPortal from './pages/AdminPortal';
+import Resources from "./pages/Resources";
 import Login from './pages/Login';
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: '/resources',
+        element: <Resources />,
       },
 
     ],

@@ -1,6 +1,8 @@
 import React from "react";
 import logo from '../../src/assets/logo.png'
 import FAQ from '../components/FAQ'
+import { Link } from 'react-router-dom';
+
 
 export default function NavBar() {
     
@@ -24,7 +26,7 @@ export default function NavBar() {
                         <a className="nav-link" href="#faq">FAQ</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Resources</a>
+                        <Link className="nav-link" to="/resources">Resources</Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Contact Us</a>
@@ -37,6 +39,16 @@ export default function NavBar() {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Mandy's Line Application</a>
+                    </li>
+                    <li className="nav-item">
+                        <a 
+                             href="https://merch.neverusealone.com/"
+                            className="nav-link" 
+                            target='_blank'
+                            rel='noopener noreferrer'
+                           >
+                                Merch
+                        </a>
                     </li>
                 </ul>
             </div>
