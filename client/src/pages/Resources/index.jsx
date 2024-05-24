@@ -1,19 +1,53 @@
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 
 export default function Resources() {
-
-    return(
+    return (
         <>
-            
-            <div className="text-center">
-                <h1> Resources! </h1>
-                <h2> Printable Outreach Material</h2>
-                <img src='../../../src/assets/NUAFlyer.png' alt='never use alone flyer' height={"700rem"}></img>
-                <a href='../../../src/assets/singleBusinessCard.png' download> Single Business Card </a>
-                <a href='../../../src/assets/multipleBusinessCard.png' download> Multipple Business Cards</a>
-                <img src='../../../src/assets/singleBusinessCard.png' alt="never use alone business card image" height={"450rem"} ></img>
-            </div>
-        
-        </>
+            <Container className="mt-5">
+                <Row className="text-center mb-5">
+                    <Col>
+                        <h1>Resources</h1>
+                        <h2>Printable Outreach Material</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={6}>
+                        <Card className="mb-4 text-center">
+                            <Card.Img variant="top" src="../../../src/assets/NUAFlyer.png" alt="Never Use Alone Flyer" />
+                            <Card.Body>
+                                <Card.Title>Never Use Alone Flyer</Card.Title>
+                                <Button variant="primary" href="../../../src/assets/NUAFlyer.png" download>Download Flyer</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <Card className="mb-4 text-center">
+                            <Card.Img variant="top" src="../../../src/assets/singleBusinessCard.png" alt="Never Use Alone Business Card" />
+                            <Card.Body>
+                                <Card.Title>Never Use Alone Business Card</Card.Title>
+                                <Button className='p-2 m-2' variant="primary" href="../../../src/assets/singleBusinessCard.png" download>Download Single Business Card</Button>
+                                <Button className='p-2 m-2' variant="primary" href="../../../src/assets/multipleBusinessCard.png" download>Download Multiple Business Cards</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
+            {/* Work at the harm reduction section */}
+            <Container>
+                <Row>
+                    <Col className='text-center border-top'>
+                    <h2> Harm Reduction Resources Online </h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs={12} md={6}>
+                        <Card className='mb-4 text-center'>
 
-    )
+                        </Card>
+                    </Col>
+                </Row>
+
+            </Container>
+        </>
+    );
 }
