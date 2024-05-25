@@ -19,7 +19,7 @@ export default function NavBar() {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Home</a>
+                        <Link className="nav-link active" to="/">Home</Link>
                     </li>
                     {/* work on this tomorrow, make it so the navbar doesn't cover any of the FAQ */}
                     <li className="nav-item">
