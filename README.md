@@ -3,18 +3,8 @@
   # A basic start to a MERN project
   
   ## Description
-  
-  This basic code using the MERN technologies, JWT, and vite to start a new project. It has the back and front end needed for account creation and loggin in. I'm just using basic bootstrap to create what little front end there is
+  Working at a new webpage for the charity hotline Never use alone
 
-  you just need to include your own .env files with something like this in it: 
-  
-  ` SECRET=mern-basics`
-
-  `EXPIRATION = 2h `
-
-
-![and image of the frontend](./readmeimgs/homepage.png)
-  
   ## Table of Contents
   
   - [Installation](#installation)
@@ -28,13 +18,9 @@
   ## Installation
 
   ### The command that is needed to install the required dependenceies
-  `
-  npm i
-  `
 
   ## Usage
   
-  It's a starting point, saves on the tedious bits of starting a project
   
   ## Credits
   
