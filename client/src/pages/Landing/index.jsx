@@ -25,7 +25,7 @@ export default function Landing() {
           reversals={reversals}/>
         <h2 id='faq' className='text-center' 
             style={{paddingTop: '3rem', 
-            // paddingBottom: '2rem'
+            paddingBottom: '2rem'
             }}
             >
           FAQ
