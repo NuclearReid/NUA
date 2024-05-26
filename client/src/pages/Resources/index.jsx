@@ -46,26 +46,6 @@ export default function Resources() {
                     </Col>
                 </Row>
             </Container>
-            {/* External info */}
-            <Container>
-                <Row>
-                    <Col className='text-center border-top'>
-                    <h2> Harm Reduction Resources Online </h2>
-                    <p><b>PLEASE, <a href='https://nextdistro.org/policies' target='_blank' rel='noopener noreferrer'>CLICK HERE</a> TO READ YOUR STATES GOOD SAMARITAN LAW!</b> </p>
-                    </Col>
-                </Row>
-                <Col xs={12} md={6}>
-                        <Card className="mb-4 text-center">
-                            <Card.Title className='fs-2 pb-3'>Next Distro</Card.Title>
-                            <Card.Img variant="top" src="../../../src/assets/nextDistroLogo.png" alt="Next Distro" />
-                            <Card.Body>
-                                <p> Next Distro is a mail based harm reduction service. They'll mail Naloxone, to anyone, anywhere in the country, totally free of charge. <a href="https://www.naloxoneforall.org/" target='_blank' rel='noopener noreferrer'>Click here </a> to order Naloxone!
-                                </p>
-                                
-                            </Card.Body>
-                        </Card>
-                    </Col>
-            </Container>
         </>
     );
 }

@@ -12,20 +12,21 @@
 .landingBackgroundImg {
   height: 100vh;
   padding-top: 33rem;
-  background-image: url('../src/assets/bannerPic.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../src/assets/bannerPic.jpeg');
   background-size: contain;
   background-position: center;
   background-repeat: repeat;
 }
+
 .text-container {
   position: absolute;
-  top: 3rem;
-  left:  3rem;
-  width: 33.33%; 
+  top: 20%;
+  left:  30%;
+  width: 40%; 
   text-align: center;
   margin-top: 8rem;
   padding: 20px;
-  background-color: rgba(128, 128, 128, 0.7);
+  background-color: rgba(128, 128, 128, 0.1);
   color: white; 
   backdrop-filter: blur(5px); 
 }
@@ -34,25 +35,35 @@
   .text-container{
     width: 80%;
     left: 0;
-    margin: 10rem 3rem 0 3rem;
+    margin: 1rem 3rem 0 3rem;
     /* margin: 1rem; */
     text-align: center;
   }
 }
 .callUs {
   background-color: black;
-  height: 7rem;
-  width: 14rem;
+  height: 4rem;
+  width: 11rem;
   font-size: 5rem;
+  padding: 0rem;
 }
 
+.aboutBkg,
 .aboutText {
   background-color: bisque;
 }
 
+.statsBkg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statsBkg,
 .statistics {
   background-color: aqua;
 }
+
 .stat {
   display: inline-block;
   text-align: center;
@@ -60,5 +71,9 @@
 }
 .carousel-image {
   height: 27rem; /* or whatever height you want */
+  object-fit: fill;
+}
+.resourceCardImg {
+  height: 10rem;
   object-fit: fill;
 }
