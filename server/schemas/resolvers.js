@@ -1,11 +1,11 @@
-const { User } = require('../models');
+const { User, Complaint } = require('../models');
 const {signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
 
         users: async () => {
-            return User.find()//.populate('foo');
+            return User.find();
         },
 
         me: async (parent, args, context) => {
@@ -19,6 +19,9 @@ const resolvers = {
         },
         admin: async () => {
             return User.findOne({email:'Admin'});
+        },
+        complaints: async () => {
+            return Complaint.find();
         }
     },
     Mutation: {
@@ -58,6 +61,23 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
+        addComplaint: async (parent, {firstName, lastName, email, phoneNumber, date, time, grievance, namesOfInvolved, description, impact, suggestions, confidentiality}) => {
+            const complaint = await Complaint.create({
+                firstName,
+                lastName,
+                email,
+                phoneNumber,
+                date,
+                time,
+                grievance,
+                namesOfInvolved,
+                description,
+                impact,
+                suggestions,
+                confidentiality
+            });
+            return(complaint);
+        }
     }
 }
 

@@ -14,13 +14,13 @@ const complaintSchema = new Schema({
     phoneNumber: {
         type: Number,
     },
-    dateOfCall: {
+    date: {
         type: Date,
     },
-    timeOfCall: {
+    time: {
         type: String
     },
-    natureOfGrievance: {
+    grievance: {
         type: String
     },
     namesOfInvolved: {
