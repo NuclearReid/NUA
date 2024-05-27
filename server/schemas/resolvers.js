@@ -3,11 +3,9 @@ const {signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-
         users: async () => {
             return User.find();
         },
-
         me: async (parent, args, context) => {
             if (context.user) {
                 const foundUser = await User.findOne({
@@ -24,6 +22,7 @@ const resolvers = {
             return Complaint.find();
         }
     },
+    
     Mutation: {
         addUser: async (parent, {email, password }) => {
             const user = await User.create({
@@ -61,21 +60,8 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
-        addComplaint: async (parent, {firstName, lastName, email, phoneNumber, date, time, grievance, namesOfInvolved, description, impact, suggestions, confidentiality}) => {
-            const complaint = await Complaint.create({
-                firstName,
-                lastName,
-                email,
-                phoneNumber,
-                date,
-                time,
-                grievance,
-                namesOfInvolved,
-                description,
-                impact,
-                suggestions,
-                confidentiality
-            });
+        addComplaint: async (parent, args) => {
+            const complaint = await Complaint.create({ ...args });
             return(complaint);
         }
     }

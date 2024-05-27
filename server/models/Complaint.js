@@ -16,6 +16,7 @@ const complaintSchema = new Schema({
     },
     date: {
         type: Date,
+        default: Date.now
     },
     time: {
         type: String

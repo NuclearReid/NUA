@@ -36,6 +36,7 @@ const typeDefs = gql`
         users: [User]
         me: User
         admin: User
+        complaints: [Complaint]
     }
 
     type Mutation {
@@ -56,7 +57,22 @@ const typeDefs = gql`
             reversals: Int
         ): User
 
+        addComplaint(
+            firstName: String
+            lastName: String
+            email: String
+            phoneNumber: Int
+            date: Date
+            time: String
+            grievance: String
+            namesOfInvolved: String
+            description: String
+            impact: String
+            suggestions: String
+            confidentiality: String
+        ): Complaint
     }
+    scalar Date
 `;
 
 module.exports = typeDefs;
