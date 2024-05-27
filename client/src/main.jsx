@@ -12,6 +12,7 @@ import Landing from "./pages/Landing";
 import AdminPortal from './pages/AdminPortal';
 import Resources from "./pages/Resources";
 import Login from './pages/Login';
+import ParticipantGrievanceForm from "./pages/ParticipantGrievanceForm";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,10 @@ const router = createBrowserRouter([
         path: '/resources',
         element: <Resources />,
       },
-
+      {
+        path: '/particpantGrievanceForm',
+        element: <ParticipantGrievanceForm />
+      }
     ],
   },
 ]);

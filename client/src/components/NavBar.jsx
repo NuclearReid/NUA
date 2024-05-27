@@ -28,8 +28,15 @@ export default function NavBar() {
                     <li className="nav-item">
                         <Link className="nav-link" to="/resources">Resources</Link>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Contact Us</a>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Contact Us
+                        </a>
+                        <ul className="dropdown-menu">
+                            <li>
+                                <Link className="dropdown-item" to="/particpantGrievanceForm">Participant Grievance Form</Link>
+                            </li>
+                        </ul>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">12 Step Alternatives</a>
