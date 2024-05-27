@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
     type User {
         _id: ID
         email: String!
@@ -8,6 +9,22 @@ const typeDefs = gql`
         callsRecieved: Int
         peopleServed: Int
         reversals: Int
+    }
+
+    type Complaint {
+        _id: ID
+        firstName: String
+        lastName: String
+        email: String
+        phoneNumber: Int
+        date: Date
+        time: String
+        grievance: String
+        namesOfInvolved: String
+        description: String
+        impact: String
+        suggestions: String
+        confidentiality: String
     }
 
     type Auth {
@@ -19,6 +36,7 @@ const typeDefs = gql`
         users: [User]
         me: User
         admin: User
+        complaints: [Complaint]
     }
 
     type Mutation {
@@ -32,12 +50,29 @@ const typeDefs = gql`
             email: String!
             password: String!
         ): Auth
+
         setStats(
             callsRecieved: Int
             peopleServed: Int
             reversals: Int
         ): User
+
+        addComplaint(
+            firstName: String
+            lastName: String
+            email: String
+            phoneNumber: Int
+            date: Date
+            time: String
+            grievance: String
+            namesOfInvolved: String
+            description: String
+            impact: String
+            suggestions: String
+            confidentiality: String
+        ): Complaint
     }
+    scalar Date
 `;
 
 module.exports = typeDefs;

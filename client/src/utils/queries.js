@@ -19,3 +19,22 @@ export const QUERY_ADMIN = gql`
         }
     }
 `;
+
+export const QUERY_COMPLAINT = gql`
+    query Complaint {
+        complaints {
+            firstName
+            lastName
+            email
+            phoneNumber
+            date
+            time
+            grievance
+            namesOfInvolved
+            description
+            impact
+            suggestions
+            confidentiality
+            }
+    }
+`;
