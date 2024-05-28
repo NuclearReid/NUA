@@ -77,3 +77,9 @@
   height: 10rem;
   object-fit: fill;
 }
+
+
+/* For the grievance form */
+.checkbox-margin {
+  margin-left: .5rem;
+}
