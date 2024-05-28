@@ -34,7 +34,9 @@ export default function NavBar() {
                         </a>
                         <ul className="dropdown-menu">
                             <li>
-                                <Link className="dropdown-item" to="/particpantGrievanceForm">Participant Grievance Form</Link>
+                                <Link className="dropdown-item" to="/particpantGrievanceForm">
+                                    Participant Grievance Form
+                                </Link>
                             </li>
                         </ul>
                     </li>
