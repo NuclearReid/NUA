@@ -36,7 +36,6 @@ export default function changeStatsForm() {
     }
     const statsSubmit = async (event) => {
         event.preventDefault();
-        console.log('clicked the stat button')
         try {
             // This is here to check if something is put in the stat input and if there isn't anything, it won't update that stat as null
             const variables = Object.fromEntries(

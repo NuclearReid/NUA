@@ -1,17 +1,10 @@
 import Auth from '../../utils/auth';
-// import React from 'react';
-// import { useState } from 'react';
-// import { QUERY_ME } from '../../utils/queries';
-// import { SET_STATS } from '../../utils/mutations';
-// import { useMutation, useQuery } from '@apollo/client';
+
 import ChangeStatsForm from '../../components/adminComponents/statsForm'
 
 
 
 export default function adminPortal() {
-
-    // const { loading, data: meData} = useQuery(QUERY_ME);
-    // const userEmail = meData?.me?.email;
     
     // handles the logout
     const isLoggedIn = Auth.loggedIn();

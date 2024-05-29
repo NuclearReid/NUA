@@ -46,3 +46,37 @@ export const SET_STATS = gql`
     }
   }
 `;
+
+export const ADD_COMPLAINT =gql` 
+  mutation Mutation(
+      $firstName: String 
+      $lastName: String 
+      $email: String 
+      $phoneNumber: String
+      $date: Date
+      $time: String 
+      $grievance: String 
+      $namesOfInvolved: String 
+      $description: String
+      $impact: String
+      $suggestions: String 
+      $confidentiality: String
+    ) {
+    addComplaint(
+      firstName: $firstName 
+      lastName: $lastName 
+      email: $email 
+      phoneNumber: $phoneNumber 
+      date: $date 
+      time: $time 
+      grievance: $grievance 
+      namesOfInvolved: $namesOfInvolved 
+      description: $description 
+      impact: $impact 
+      suggestions: $suggestions 
+      confidentiality: $confidentiality
+    ) {
+      _id
+    }
+  }
+`;
