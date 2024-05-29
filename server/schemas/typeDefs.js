@@ -16,7 +16,7 @@ const typeDefs = gql`
         firstName: String
         lastName: String
         email: String
-        phoneNumber: Int
+        phoneNumber: String
         date: Date
         time: String
         grievance: String
@@ -61,7 +61,7 @@ const typeDefs = gql`
             firstName: String
             lastName: String
             email: String
-            phoneNumber: Int
+            phoneNumber: String
             date: Date
             time: String
             grievance: String

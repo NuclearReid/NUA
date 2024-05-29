@@ -1,6 +1,6 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-  # A basic start to a MERN project
+  # Never Use Alone Hotline
   
   ## Description
   Working at a new webpage for the charity hotline Never use alone

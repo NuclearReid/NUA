@@ -12,7 +12,7 @@ const complaintSchema = new Schema({
         type: String,
     },
     phoneNumber: {
-        type: Number,
+        type: String,
     },
     date: {
         type: Date,
