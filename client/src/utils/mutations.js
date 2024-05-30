@@ -47,7 +47,7 @@ export const SET_STATS = gql`
   }
 `;
 
-export const ADD_COMPLAINT =gql` 
+export const ADD_COMPLAINT = gql` 
   mutation Mutation(
       $firstName: String 
       $lastName: String 
@@ -77,6 +77,16 @@ export const ADD_COMPLAINT =gql`
       confidentiality: $confidentiality
     ) {
       _id
+    }
+  }
+`;
+
+export const DELETE_COMPLAINT = gql`
+  mutation DeleteComplaint($_id: ID) {
+    deleteComplaint(_id: $_id) {
+      _id
+      firstName
+      lastName
     }
   }
 `;

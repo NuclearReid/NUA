@@ -18,8 +18,10 @@
     },
     "dependencies": {
         "bootstrap": "^5.3.3",
+        "dayjs": "^1.11.11",
         "dotenv": "^16.4.5",
         "gsap": "^3.12.5",
+        "lint": "^0.8.19",
         "react-bootstrap": "^2.10.2",
         "react-window": "^1.8.10"
     }
