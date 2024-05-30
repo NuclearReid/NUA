@@ -56,9 +56,11 @@ export default function changeStatsForm() {
     }
 
     return (
+        <>
         <form 
             className='col-3 p-3'
             onChange={handleChange}>
+            <h1> Change Stats </h1>
             <div className="input-group mb-3">
                 <span 
                     className="input-group-text" 
@@ -114,6 +116,7 @@ export default function changeStatsForm() {
                     Update Stats
             </button>
         </form>
+        </>
     )
 
 }

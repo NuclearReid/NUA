@@ -43,7 +43,6 @@ const typeDefs = gql`
         addUser(
             email: String!
             password: String!
-            #foo: [ID]
         ): Auth
 
         login(
@@ -70,6 +69,10 @@ const typeDefs = gql`
             impact: String
             suggestions: String
             confidentiality: String
+        ): Complaint
+
+        deleteComplaint(
+            _id: ID
         ): Complaint
     }
     scalar Date

@@ -32,6 +32,7 @@ const resolvers = {
             const token = signToken(user);
             return {token, user}
         },
+        
         login: async (parent, {email, password }) => {
             const user = await User.findOne({ email });
 
@@ -45,6 +46,7 @@ const resolvers = {
             const token = signToken(user);
             return {token, user};
         },
+
         setStats: async (parent, {callsRecieved, peopleServed, reversals}, context) => {         
             if (context.user) {
                 // This is here to check if something is put in the stat input form and if there isn't anything, it won't update that stat as null
@@ -60,9 +62,18 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
+
         addComplaint: async (parent, args) => {
             const complaint = await Complaint.create({ ...args });
             return(complaint);
+        },
+
+        deleteComplaint: async (parent, {_id} ) => {
+            const complaint = await Complaint.findByIdAndDelete(_id);
+            if(!complaint) {
+                throw new Error("can't find a complaint with that id")
+            }
+            return (complaint);
         }
     }
 }

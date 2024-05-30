@@ -23,6 +23,7 @@ export const QUERY_ADMIN = gql`
 export const QUERY_COMPLAINT = gql`
     query Complaint {
         complaints {
+            _id
             firstName
             lastName
             email
@@ -38,3 +39,4 @@ export const QUERY_COMPLAINT = gql`
             }
     }
 `;
+
