@@ -6,7 +6,7 @@ import { useMutation } from '@apollo/client';
 import { DELETE_COMPLAINT } from '../../utils/mutations';
 
 
-export default function GreivanceCardData ({complaint, index, refetch, setActiveIndex, activeIndex}) {
+export default function GrievanceCardData ({complaint, index, refetch, setActiveIndex, activeIndex}) {
     // console.log(complaint);
     const date = dayjs(complaint.date).format('MM/DD/YYYY')
 
@@ -28,7 +28,31 @@ export default function GreivanceCardData ({complaint, index, refetch, setActive
             console.error(error)
             console.error('Apollo error: ', error.graphQLErrors)
         }
-    } 
+    }
+    
+    const handleDownloadClick = () => {
+        const grievanceContent = `
+            Name: ${complaint.firstName} ${complaint.lastName}
+            Email: ${complaint.email}
+            Phone Number: ${complaint.phoneNumber}
+            Nature of Grievance: ${complaint.grievance}
+            Description: ${complaint.description}
+            Impact: ${complaint.impact}
+            Who was involved: ${complaint.namesOfInvolved}
+            Suggestions: ${complaint.suggestions}
+            confidentiality: ${complaint.confidentiality}
+            Time: ${complaint.time}
+            Date: ${date}
+        `;
+
+        const element = document.createElement('a');
+        const file = new Blob([grievanceContent], {type: 'text/plain'});
+        element.href = URL.createObjectURL(file);
+        element.download = `Grievance-${complaint.firstName}-${complaint.lastName}.txt`;
+        // document.body.appendChild is needed for this to work in firefox
+        document.body.appendChild(element);
+        element.click();
+    }
 
     return (
         <>
@@ -36,12 +60,12 @@ export default function GreivanceCardData ({complaint, index, refetch, setActive
                 <Card className='p-4'
                     value={complaint._id}
                 >
-                    <h2>Greivance Card {index +1 }</h2>
-                    <p>
+                    <h2>Grievance Card {index +1 }</h2>
+                    <p id='grievance-content'>
                         Name: {complaint.firstName} {complaint.lastName} <br/>
                         Email: {complaint.email} <br/>
                         Phone Number: {complaint.phoneNumber} <br/>
-                        Nature of Greivance: {complaint.greivance} <br/>
+                        Nature of Grievance: {complaint.grievance} <br/>
                         Description: {complaint.description} <br/>
                         Impact: {complaint.impact} <br/>
                         Who was involved: {complaint.namesOfInvolved} <br/>
@@ -51,14 +75,18 @@ export default function GreivanceCardData ({complaint, index, refetch, setActive
                         Date: {date}
                     </p>
                     <Row xs={12} md={2}>
-                        <Button className='btn-primary'>
+                        <Button 
+                            className='btn-primary'
+                            onClick={handleDownloadClick}
+                        >
                             Download
                         </Button>
+
                         <Button 
                             className='btn-danger'
                             onClick={handleDeleteClick}
                         >
-                            Delete Greivance
+                            Delete Grievance
                         </Button>
                     </Row>
                 </Card>
