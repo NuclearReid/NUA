@@ -1,12 +1,12 @@
 import { Container, Carousel} from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
-import GreivanceCardData from './GreivanceCardData';
+import GrievanceCardData from './GrievanceCardData';
 
 import {useQuery} from '@apollo/client';
 import { QUERY_COMPLAINT } from '../../utils/queries';
 
-export default function GreivanceCardDisplay() {
+export default function GrievanceCardDisplay() {
     const {loading, data, error, refetch} = useQuery(QUERY_COMPLAINT);
 
     // Used to subtract 1 from the grievance card index.
@@ -27,7 +27,7 @@ export default function GreivanceCardDisplay() {
                     {data?.complaints.map((complaint, index) => (
                         // key={complaint._id} is used here to make sure each Carousel Item is unique/can be uniquely identified by react
                         <Carousel.Item key={complaint._id} >
-                            <GreivanceCardData 
+                            <GrievanceCardData 
                                 index={index} 
                                 complaint={complaint} 
                                 refetch={refetch}

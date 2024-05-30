@@ -2,7 +2,7 @@ import Auth from '../../utils/auth';
 import { Row, Col, Container} from 'react-bootstrap';
 
 import ChangeStatsForm from '../../components/adminComponents/statsForm'
-import GreivanceCardDisplay from '../../components/adminComponents/GreivanceCardDisplay';
+import GrievanceCardDisplay from '../../components/adminComponents/GrievanceCardDisplay';
 
 
 
@@ -22,7 +22,7 @@ export default function adminPortal() {
                 <Col>
                     <Row xs={12} md={4}>
                         <ChangeStatsForm />
-                        <GreivanceCardDisplay />
+                        <GrievanceCardDisplay />
                     </Row>
                 
                 </Col>
