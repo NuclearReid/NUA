@@ -31,6 +31,7 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
     }
     
     const handleDownloadClick = () => {
+        // I needed to make this variable because for some reason, I couldn't get the variables were coming up blank from the <p> 
         const grievanceContent = `
             Name: ${complaint.firstName} ${complaint.lastName}
             Email: ${complaint.email}
@@ -44,7 +45,6 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
             Time: ${complaint.time}
             Date: ${date}
         `;
-
         const element = document.createElement('a');
         const file = new Blob([grievanceContent], {type: 'text/plain'});
         element.href = URL.createObjectURL(file);
