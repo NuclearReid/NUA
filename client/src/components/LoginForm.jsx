@@ -41,10 +41,16 @@ export default function Login() {
 
     return (
         <>
-        <form onSubmit={handleFormSubmit}>
-            Login
+        <div className='d-flex justify-content-center'>
+            <form onSubmit={handleFormSubmit} className='col-3 p-4 mx-auto'>
+            <h1 className='fs-2 text-center'> 
+                Login
+            </h1>
                 <div className="mb-3">
-                    <label htmlFor="exampleLoginInputEmail" className="form-label">Email</label>
+                    <label htmlFor="exampleLoginInputEmail" className="form-label">
+                        Username
+                    </label>
+                    
                     <input 
                         type="username" 
                         className="form-control" 
@@ -68,12 +74,15 @@ export default function Login() {
                         onChange={handleChange} 
                     />
                 </div>
-                <button 
-                    type="submit" 
-                    className="btn btn-primary">
-                        Submit
-                </button>
+                <div className='text-center'>
+                    <button 
+                        type="submit" 
+                        className="btn btn-primary">
+                            Submit
+                    </button>
+                </div>
             </form>
+        </div>
         </>
     )
 }
