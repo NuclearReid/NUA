@@ -5,6 +5,7 @@
   margin-top: -1rem;
 }
 
+
 .landing {
   align-items:start;
   justify-self: start;
@@ -53,7 +54,8 @@
 
 .aboutBkg,
 .aboutText {
-  background-color: bisque;
+  background-color: rgb(164, 193, 255);
+  color: black;
 }
 
 .statsBkg {
@@ -64,7 +66,8 @@
 
 .statsBkg,
 .statistics {
-  background-color: aqua;
+  background-color: rgb(254, 205, 69);
+  color: black;
 }
 
 .stat {
