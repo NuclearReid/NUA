@@ -23,6 +23,7 @@
         "gsap": "^3.12.5",
         "lint": "^0.8.19",
         "react-bootstrap": "^2.10.2",
+        "react-router-bootstrap": "^0.26.2",
         "react-window": "^1.8.10"
     }
 }

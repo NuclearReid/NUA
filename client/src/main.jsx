@@ -10,6 +10,7 @@ import Landing from "./pages/Landing";
 // import TestPage from "./pages/Profile";
 // import LoggedIn from "./pages/LoggedIn";
 import AdminPortal from './pages/AdminPortal';
+import AdminGrievance from "./pages/AdminPortal/grievance";
 import Resources from "./pages/Resources";
 import Login from './pages/Login';
 import ParticipantGrievanceForm from "./pages/ParticipantGrievanceForm";
@@ -24,10 +25,16 @@ const router = createBrowserRouter([
         index: true,
         element: <Landing />,
       },
+      // All the admin portal bits
       {
         path: "/adminportal",
         element: <AdminPortal />,
       },
+      {
+        path: "/adminportal/admingrievance",
+        element: <AdminGrievance />
+      },
+      //////////////////////////////
       {
         path: "/login",
         element: <Login />,

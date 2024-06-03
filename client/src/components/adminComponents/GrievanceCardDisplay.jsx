@@ -5,6 +5,7 @@ import GrievanceCardData from './GrievanceCardData';
 
 import {useQuery} from '@apollo/client';
 import { QUERY_COMPLAINT } from '../../utils/queries';
+import { Next } from 'react-bootstrap/esm/PageItem';
 
 export default function GrievanceCardDisplay() {
     const {loading, data, error, refetch} = useQuery(QUERY_COMPLAINT);
@@ -14,10 +15,13 @@ export default function GrievanceCardDisplay() {
     const handleSelect = (selectedIndex, e) => {
         setActiveIndex(selectedIndex);
     };
+
     
     return (
         <>
-            <Container xs={12} md={4}>
+            <Container xs={12} md={4} className='carousel-container'
+
+            >
                 {/* interval=null makes it so the carousel doesn't automatically cyle */}
                 <Carousel 
                     activeIndex={activeIndex} 
@@ -26,7 +30,7 @@ export default function GrievanceCardDisplay() {
                 >
                     {data?.complaints.map((complaint, index) => (
                         // key={complaint._id} is used here to make sure each Carousel Item is unique/can be uniquely identified by react
-                        <Carousel.Item key={complaint._id} >
+                        <Carousel.Item key={complaint._id}>
                             <GrievanceCardData 
                                 index={index} 
                                 complaint={complaint} 
