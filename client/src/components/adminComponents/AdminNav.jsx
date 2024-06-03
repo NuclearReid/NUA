@@ -3,7 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import Auth from '../../utils/auth';
+
 export default function adminNav() {
+    const logoutOnClick = () => {
+        Auth.logout();
+      };
 
     return (
         <>
@@ -17,8 +22,12 @@ export default function adminNav() {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                        Dank memes
+                        <Nav.Link 
+                            // eventKey={2} 
+                            // href="#memes"
+                            onClick={logoutOnClick}
+                        >
+                        Logout
                         </Nav.Link>
                     </Nav>
                     </Navbar.Collapse>

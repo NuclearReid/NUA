@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import Auth from '../src/utils/auth';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -14,6 +15,20 @@ import AdminGrievance from "./pages/AdminPortal/grievance";
 import Resources from "./pages/Resources";
 import Login from './pages/Login';
 import ParticipantGrievanceForm from "./pages/ParticipantGrievanceForm";
+import AdminNav from "./components/adminComponents/AdminNav";
+
+
+const ProtectedRoute = ({ children }) => {
+  const isLoggedIn = Auth.loggedIn(); // Your auth check logic
+
+  if (!isLoggedIn) {
+    // If the user is not logged in, redirect to the login page
+    return <Navigate to="/login" />;
+  }
+
+  // If the user is logged in, render the children components
+  return children;
+};
 
 const router = createBrowserRouter([
   {
@@ -28,11 +43,21 @@ const router = createBrowserRouter([
       // All the admin portal bits
       {
         path: "/adminportal",
-        element: <AdminPortal />,
+        element: (
+          <ProtectedRoute>
+            <AdminNav />
+            <AdminPortal />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/adminportal/admingrievance",
-        element: <AdminGrievance />
+        element: (
+          <ProtectedRoute>
+            <AdminNav />
+            <AdminGrievance />
+          </ProtectedRoute>
+        ),
       },
       //////////////////////////////
       {

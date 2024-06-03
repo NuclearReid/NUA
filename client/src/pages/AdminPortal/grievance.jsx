@@ -3,18 +3,10 @@ import AdminNav from "../../components/adminComponents/AdminNav";
 import Auth from '../../../src/utils/auth'
 
 export default function AdminGrievance() {
-  const isLoggedIn = Auth.loggedIn()
-  
+x  
   return (
     <>
-      { isLoggedIn ? (
-        <>
-          <AdminNav />
-          <GrievanceCardDisplay />
-        </>
-      ): (
-        window.location.assign('/')
-      ) }
+      <GrievanceCardDisplay />
     </>
   );
 }
