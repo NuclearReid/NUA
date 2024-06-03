@@ -53,11 +53,13 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
         document.body.appendChild(element);
         element.click();
     }
+    // const PrevArrowIcon = <span aria-hidden="true" className="carousel-control-prev-icon" />;
+    // const NextArrowIcon = <span aria-hidden="true" className="carousel-control-next-icon" />;
 
     return (
         <>
-            <Container>
-                <Card className='p-4'
+            <Container>         
+                <Card  className='p-5 m-0 m-md-5'
                     value={complaint._id}
                 >
                     <h2>Grievance Card {index +1 }</h2>
@@ -74,16 +76,16 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
                         Time: {complaint.time} <br/>
                         Date: {date}
                     </p>
-                    <Row xs={12} md={2}>
+                    <Row xs={12} md={4}>
+                        {/* the download or delete buttons */}
                         <Button 
-                            className='btn-primary'
+                            className='btn-primary m-3'
                             onClick={handleDownloadClick}
                         >
                             Download
                         </Button>
-
                         <Button 
-                            className='btn-danger'
+                            className='btn-danger m-3'
                             onClick={handleDeleteClick}
                         >
                             Delete Grievance

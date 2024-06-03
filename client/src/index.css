@@ -39,6 +39,9 @@
     /* margin: 1rem; */
     text-align: center;
   }
+  .carousel-control-prev-icon {
+    margin-left: 0;
+  }
 }
 .callUs {
   background-color: black;
@@ -70,7 +73,7 @@
   margin: 0 1rem;
 }
 .carousel-image {
-  height: 27rem; /* or whatever height you want */
+  height: 27rem; 
   object-fit: fill;
 }
 .resourceCardImg {
@@ -82,4 +85,10 @@
 /* For the grievance form */
 .checkbox-margin {
   margin-left: .5rem;
+}
+
+/* grievance carousel control icons*/
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
 }
