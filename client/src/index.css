@@ -13,9 +13,9 @@
   height: 100vh;
   padding-top: 33rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../src/assets/bannerPic.jpeg');
-  background-size:auto;
+  background-size:cover;
   background-position: center;
-  background-repeat:repeat;
+  background-repeat:no-repeat;
 }
 
 .text-container {
@@ -90,7 +90,8 @@
   margin-left: .5rem;
 }
 
-/* grievance carousel control icons*/
+/* carousel control icons*/
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(100%);

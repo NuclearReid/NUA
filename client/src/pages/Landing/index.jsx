@@ -52,12 +52,6 @@ export default function Landing() {
             </div>
           </div>
         </div>
-
-        <div 
-          className='border-top pt-3'
-          >
-          <HarmReduction/>
-        </div>
     </>
   );
 }

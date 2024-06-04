@@ -1,5 +1,6 @@
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import CommunityGraphics from '../../components/communityGraphics';
+import HarmReduction from '../../components/HarmReduction';
 
 export default function Resources() {
     return (
@@ -46,6 +47,12 @@ export default function Resources() {
                     </Col>
                 </Row>
             </Container>
+            <div 
+            className='border-top pt-3'
+            >
+                <HarmReduction/>
+            </div>
+            
         </>
     );
 }

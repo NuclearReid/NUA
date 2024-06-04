@@ -71,7 +71,7 @@ export default function FAQ() {
             {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
                 <div className="row" key={rowIndex}>
                     {faqs.slice(rowIndex * 3, (rowIndex + 1) * 3).map((faq, index) => (
-                        <div className='col-md-4 pb-3 accordion accordion-flush' key={index}>
+                        <div className='col-md-4 pb-3 accordion accordion-flush ' key={index}>
                             <FAQItem id={rowIndex * 3 + index} question={faq.question} answer={faq.answer} />
                         </div>
                     ))}
