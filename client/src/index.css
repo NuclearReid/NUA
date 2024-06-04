@@ -14,9 +14,9 @@
   height: 100vh;
   padding-top: 33rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('../src/assets/bannerPic.jpeg');
-  background-size: contain;
+  background-size:auto;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat:repeat;
 }
 
 .text-container {
@@ -75,6 +75,7 @@
   text-align: center;
   margin: 0 1rem;
 }
+/* This is for community graphics */
 .carousel-image {
   height: 27rem; 
   object-fit: fill;
@@ -94,4 +95,18 @@
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(100%);
+}
+
+
+/* Staff headshots */
+.headShotImg {
+  border-radius: 50%; /* This makes the image circular */
+  width: 30rem; /* Adjust the size as needed */
+  height: 30rem; /* Adjust the size as needed */
+  object-fit: cover; /* This will ensure the image covers the area without being stretched */
+}
+
+.hover-grow:hover{
+  transform: scale(1.1); /* Adjust the scale value as needed */
+  transition: transform 0.3s ease-in-out;
 }

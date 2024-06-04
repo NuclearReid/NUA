@@ -3,6 +3,7 @@ import About from '../../components/About';
 import Stats from '../../components/Stats';
 import LandingHeader from '../../components/LandingHeader';
 import HarmReduction from '../../components/HarmReduction';
+import StaffPics from '../../components/StaffPics';
 
 import {Container, Row, Col } from 'react-bootstrap'
 
@@ -33,6 +34,8 @@ export default function Landing() {
             />
           </Col>
         </Row>
+        <StaffPics />
+
         {/* This is partially just here to make it so the navbar won't cover up any of the FAQ questions */}
         <h2 id='faq' className='text-center' 
             style={{
