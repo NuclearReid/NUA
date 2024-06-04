@@ -64,12 +64,19 @@ export default function FAQ() {
             answer: `In August of 2019, someone posted in a private FB group that I help run. They said that they're friend had died the night before, and they offered their number, with instructions to call him if anyone were going to use when they were alone. It got me wondering, what it would take to do that on a large scale. NUA was born that day. A week later, NUA was up and running!`
         }
     ]
+    const numberOfRows = Math.ceil(faqs.length / 3);
 
     return (
-        <div className="accordion accordion-flush faqSection" id="accordionFlushExample">
-            {faqs.map((faq, index) => (
-                <FAQItem key={index} id={index} question={faq.question} answer={faq.answer} />
+        <>
+            {Array.from({ length: numberOfRows }).map((_, rowIndex) => (
+                <div className="row" key={rowIndex}>
+                    {faqs.slice(rowIndex * 3, (rowIndex + 1) * 3).map((faq, index) => (
+                        <div className='col-md-4 pb-3 accordion accordion-flush' key={index}>
+                            <FAQItem id={rowIndex * 3 + index} question={faq.question} answer={faq.answer} />
+                        </div>
+                    ))}
+                </div>
             ))}
-        </div>
+        </>
     )
 }
