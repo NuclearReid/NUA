@@ -1,15 +1,25 @@
-
+import NUAlogo from '../../src/assets/logo.png'
 export default function Footer() {
     return(
         <>
-            <div className="text-center p-3">
-                <a 
-                    className='btn btn-primary'
-                    href='https://www.facebook.com/Neverusealone?mibextid=ZbWKwL'
-                    target='_blank' 
-                    rel='noopener noreferrer'> 
-                        Connect with us on Facebook! 
-                </a>
+            <div className="d-flex justify-content-between p-3 bg-dark text-white">
+                <div>
+                    <h4>Connect with us</h4>
+                    {/* have the facebook logo */}
+                    <ul>
+                        <li>
+                            Participant's Rights
+                        </li>
+                        <li>
+                            12 Step alternatives
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <picture>
+                        <img src={NUAlogo} alt='Never Use Alone Logo' height={100}/>
+                    </picture>
+                </div>
             </div>
         </>
     )

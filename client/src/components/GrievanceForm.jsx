@@ -71,7 +71,9 @@ export default function GrievanceForm() {
                                 name='firstName' 
                                 type="text" 
                                 className="form-control" id="firstNameInput" 
-                                placeholder="First Name" />
+                                placeholder="First Name" 
+                                required
+                            />
                         </Col>
                         <Col className='mb-3' xs={12} md={3}>
                             <label htmlFor="lastNameInput" className="form-label">
@@ -81,7 +83,8 @@ export default function GrievanceForm() {
                                 name='lastName' 
                                 type="text" 
                                 className="form-control" id="lastNameInput" 
-                                placeholder="Last Name" />
+                                placeholder="Last Name" 
+                                required />
                         </Col>
                     </Row>
                     {/* Their email */}
@@ -123,7 +126,9 @@ export default function GrievanceForm() {
                             <input 
                                 name='time'
                                 type='time' 
-                                id='timeOfCall' />
+                                id='timeOfCall' 
+                                required />
+                                
                         </Col>
                     </Row>
                     {/* The nature of Grievance (checkboxes) */}

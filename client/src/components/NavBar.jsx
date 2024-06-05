@@ -37,14 +37,12 @@ export default function NavBar() {
                                 <Link className="dropdown-item" to="/particpantGrievanceForm">
                                     Participant Grievance Form
                                 </Link>
+                                
                             </li>
                         </ul>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">12 Step Alternatives</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Participant Rights</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Mandy's Line Application</a>
