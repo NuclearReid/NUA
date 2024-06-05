@@ -22,9 +22,9 @@ export default function NavBar() {
                         <Link className="nav-link active" to="/">Home</Link>
                     </li>
                     {/* work on this tomorrow, make it so the navbar doesn't cover any of the FAQ */}
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <a className="nav-link" href="#faq">FAQ</a>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link className="nav-link" to="/resources">Resources</Link>
                     </li>
