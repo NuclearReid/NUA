@@ -7,6 +7,7 @@ export default function GrievanceForm() {
     
     const [sendComplaint, {error, data}] = useMutation(ADD_COMPLAINT)
     const [allFilled, setAllFilled] = useState(true);
+    const [unfilledFields, setUnfilledFields] = useState([]);
 
     const [formState, setFormState] = useState({
         firstName: '',
@@ -23,9 +24,14 @@ export default function GrievanceForm() {
         confidentiality: ''
     });
 
+    // This is used to make sure the required sections are entered
     useEffect(() => {
         const fieldsToValidate = ['date', 'time', 'namesOfInvolved', 'description', 'impact', 'confidentiality']
+        // basically cycles through the required fields and if they're all filled in then 'isAllFilled is true and the submit button will submit to the database
         const isAllFilled = fieldsToValidate.every(key => formState[key].trim() !== '');
+        // I'm checking which ones haven't been filled so i can send that data to the modal & make it easy for the user to see what they left out
+        const unfilled = fieldsToValidate.filter(key => formState[key].trim() === '');
+        setUnfilledFields(unfilled);
         setAllFilled(isAllFilled);
     }, [formState]); // This will run every time formState changes
 
@@ -41,9 +47,6 @@ export default function GrievanceForm() {
     const grievanceSubmit = async (event) => {
         event.preventDefault();
         try {
-            // if(!formState.date || !formState.time || !formState.namesOfInvolved || !formState.description || !formState.impact || !formState.confidentiality) {
-            //     allFilled = false;
-            // }
             
             console.log(formState);
 
@@ -70,7 +73,7 @@ export default function GrievanceForm() {
             console.error(error);
         }
     }
-
+    // this is used with the useEffect. basically, if all the required sections are filled out then the button submits. if not, the button triggers the modal
     const buttonProps = allFilled
             ? { onClick: grievanceSubmit, type: 'submit', className: 'btn btn-primary' }
             : { type: 'button', className: 'btn btn-primary', 'data-bs-toggle': 'modal', 'data-bs-target': '#exampleModal' };
@@ -315,7 +318,6 @@ export default function GrievanceForm() {
                             onChange={handleChange}
                         />
                         <div className="form-text">Offer any recommendations or suggestions for how the crisis line service could be improved to prevent similar issues in the future</div>
-
                         </Col>
                     </Row>
                     {/* Confidentiality */}
@@ -344,25 +346,29 @@ export default function GrievanceForm() {
 
             {/* <!-- Modal --> */}
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
-                <div className="modal-content">
-                <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">
-                        Not all required sections were filled out
-                    </h1>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                    Please fill out the required sections
-                </div>
-                <div className="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
+                            Not all required sections were filled out
+                        </h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                        <ul>
+                            {unfilledFields.map(field => (
+                                <li key={field}>{
+                                    field}
+                                </li>
+                        ))}
+                        </ul>                    
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </div>
                 </div>
             </div>
-            </div>
-
-
         </>
     )
 }
