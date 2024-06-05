@@ -27,6 +27,27 @@ const typeDefs = gql`
         confidentiality: String
     }
 
+    type Application {
+        _id: ID
+        email: String
+        name: String
+        over21: String
+        phoneNumber: String
+        location: String
+        nightOwl: String
+        available: [String]
+        SUD: String
+        facebook: String
+        firstPerson: String
+        harmReduction: String
+        harmReductionEXP: String
+        mandatedReporter: String
+        recovery: String
+        endGoal: String
+        specialSkills: String
+        why: String
+    }
+
     type Auth {
         token: String
         User: User
