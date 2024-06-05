@@ -158,39 +158,45 @@ export default function GrievanceForm() {
                     {/* Date and Time of the call */}
                     <Row className='mb-3'>
                         <Col xs={12} md={3}>
-                            <label className='p-2' htmlFor="dateOfCall">Date of Call: </label>
-                            <input
-                                name="date" 
-                                type="date" 
-                                id="dateOfCall"
-                                value={formState.date}
-                                onChange={handleChange}
-                                required 
-                            />
+                            <label className='p-2' htmlFor="dateOfCall">Date of Call: <span style={{color: 'red'}}>*</span> </label>
+                            <Col xs={12} md={3}>
+                                <input
+                                    name="date" 
+                                    type="date" 
+                                    id="dateOfCall"
+                                    value={formState.date}
+                                    onChange={handleChange}
+                                    required 
+                                />
+                            </Col>
+                            
                             <div className="form-text">What day was the call?</div>
                         </Col>
                         <Col xs={12} md={3}>
-                            <label className='p-2' htmlFor='timeOfCall'> Time of Call: </label>
-                            <input 
-                                name='time'
-                                type='time' 
-                                id='timeOfCall' 
-                                value={formState.time}
-                                onChange={handleChange}
-                                required 
-                            />
+                            <label className='p-2' htmlFor='timeOfCall'> Time of Call: <span style={{color: 'red'}}>*</span> </label>
+                            <Col xs={12} md={3}>
+                                <input 
+                                    name='time'
+                                    type='time' 
+                                    id='timeOfCall' 
+                                    value={formState.time}
+                                    onChange={handleChange}
+                                    required 
+                                />
+                            </Col>
+                            
                             <div className="form-text">What time was the call?</div>                        
                         </Col>
                     </Row>
                     {/* The nature of Grievance (checkboxes) */}
                     <Row className="mb-3">
                         <Col xs={12} md={6}>
-                            <h2>Nature of Grievance</h2>
+                            <h2>Nature of Grievance<span style={{color: 'red'}}>*</span></h2>
                             <div className='p-2'>
                                 <input
                                     name='grievance' 
                                     className="form-check-input" 
-                                    checked
+                                    checked = {formState.grievance === "Inadequate response"}
                                     type="radio" 
                                     value="Inadequate response" 
                                     id="responseGrievance"
@@ -252,7 +258,7 @@ export default function GrievanceForm() {
                     <Row className="mb-3">
                         <Col xs={12} md={6} className='form-check'>
                             <label htmlFor="namesOfInvolved" className="form-label"> 
-                                Who was involved?
+                                Who was involved?<span style={{color: 'red'}}>*</span> 
                             </label>
                             <textarea
                                 name='namesOfInvolved' 
@@ -269,7 +275,7 @@ export default function GrievanceForm() {
                     <Row className="mb-3">
                         <Col xs={12} md={6} className='form-check'>
                             <label htmlFor="grievanceTextArea" className="form-label"> 
-                                Describe your grievance
+                                Describe your grievance<span style={{color: 'red'}}>*</span> 
                             </label>
                             <textarea
                                 name='description' 
@@ -287,7 +293,7 @@ export default function GrievanceForm() {
                     <Row className="mb-3">
                         <Col xs={12} md={6} className='form-check'>
                             <label htmlFor="impactTextArea" className="form-label"> 
-                                Impact on you
+                                Impact on you<span style={{color: 'red'}}>*</span> 
                             </label>
                             <textarea
                                 name='impact' 
@@ -324,7 +330,7 @@ export default function GrievanceForm() {
                     <Row className='mb-3'>
                         <Col xs={12} md={6}>
                         <label htmlFor="confidentialityTextArea" className="form-label"> 
-                            Confidentialty
+                            Confidentialty <span style={{color: 'red'}}>*</span> 
                         </label>
                         <textarea
                             name='confidentiality' 
