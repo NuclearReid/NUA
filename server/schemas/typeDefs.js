@@ -45,7 +45,6 @@ const typeDefs = gql`
         SUD: String
         facebook: String
         firstPerson: String
-        harmReduction: String
         harmReductionEXP: String
         harmReductionExplain: String
         mandatedReporter: String
@@ -117,7 +116,6 @@ const typeDefs = gql`
             SUD: String
             facebook: String
             firstPerson: String
-            harmReduction: String
             harmReductionEXP: String
             harmReductionExplain: String
             mandatedReporter: String

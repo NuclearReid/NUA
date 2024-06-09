@@ -54,7 +54,6 @@ export const QUERY_APPLICATION = gql`
             SUD
             facebook
             firstPerson
-            harmReduction
             harmReductionEXP
             harmReductionExplain
             mandatedReporter

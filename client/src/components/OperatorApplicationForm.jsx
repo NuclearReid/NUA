@@ -8,6 +8,9 @@ import { OPERATOR_APPLICATION } from '../utils/mutations';
 export default function OperatorApplicationForm() {
     const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const timeOptions = ['Morning', 'Evening', 'Night', 'Not Available'];
+    const [allFilled, setAllFilled] = useState(true);
+    const [unfilledFields, setUnfilledFields] = useState([]);
+
 
     const [sendApplication, {error, data}] = useMutation(OPERATOR_APPLICATION);
     const [formState, setFormState] = useState({
@@ -27,7 +30,6 @@ export default function OperatorApplicationForm() {
         SUD: '',
         facebook: '',
         firstPerson: '',
-        harmReduction: '',
         harmReductionEXP: '',
         harmReductionExplain: '',
         treatmentCenter: '',
@@ -38,7 +40,16 @@ export default function OperatorApplicationForm() {
         why: ''
     });
     
-    // use useEffect later on to verify that all the required sections have been completed
+    // makes sure all the required sections are filled out
+    useEffect(() => {
+        const fieldsToValidate = ['email', 'name', 'over21', 'phoneNumber', 'resident', 'nightOwl', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'SUD', 'firstPerson', 'harmReductionEXP', 'treatmentCenter', 'mandatedReporter', 'recovery', 'endGoal', 'why']
+        // basically cycles through the required fields and if they're all filled in then 'isAllFilled is true and the submit button will submit to the database
+        const isAllFilled = fieldsToValidate.every(key => formState[key].trim() !== '');
+        // I'm checking which ones haven't been filled so i can send that data to the modal & make it easy for the user to see what they left out
+        const unfilled= fieldsToValidate.filter(key => formState[key].trim() === '');
+        setUnfilledFields(unfilled);
+        setAllFilled(isAllFilled);
+    }, [formState]);
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -74,7 +85,6 @@ export default function OperatorApplicationForm() {
                 SUD: '',
                 facebook: '',
                 firstPerson: '',
-                harmReduction: '',
                 harmReductionEXP: '',
                 harmReductionExplain: '',
                 treatmentCenter: '',
@@ -89,6 +99,9 @@ export default function OperatorApplicationForm() {
         }
     }
 
+    const buttonProps = allFilled
+    ? { onClick: applicationSubmit, type: 'submit', className: 'btn btn-primary mb-5', 'data-bs-toggle': 'modal', 'data-bs-target': '#submittedModal', children:'Submit my application!'  }
+    : { type: 'button', className: 'btn btn-primary mb-5', 'data-bs-toggle': 'modal', 'data-bs-target': '#unfilledModal', children: 'Click me to see what still needs to be completed' };
 
     return (
         <>
@@ -137,8 +150,7 @@ export default function OperatorApplicationForm() {
                             />
                         </Col>
                         
-                    </Row>
-                    
+                    </Row>          
                     {/* their phone number value and onChange done*/}
                     <Row>
                         <Col className='mb-3' xs={12} md={5}>
@@ -261,11 +273,11 @@ export default function OperatorApplicationForm() {
                                             </FormLabel>
                                             <div className="form-floating">
                                                 <select
-                                                    name={day} 
+                                                    name={day.toLocaleLowerCase()} 
                                                     className="form-select" 
                                                     aria-label="Floating label select example"
                                                     onChange={handleChange}
-                                                    value={formState.day}    
+                                                    value={formState[day.toLocaleLowerCase()]}    
                                                 >
                                                         <option value="">Choose</option>
                                                         {timeOptions.map(option => (
@@ -375,7 +387,7 @@ export default function OperatorApplicationForm() {
                             </label>
                             <div>
                                 <FormCheck
-                                    value={'yes'}
+                                    value='yes'
                                     className='fs-5'
                                     type="radio"
                                     label="Yes"
@@ -385,7 +397,7 @@ export default function OperatorApplicationForm() {
                                     checked={formState.harmReductionEXP === 'yes'}
                                 />
                                 <FormCheck
-                                    value={'no'}
+                                    value='no'
                                     className='fs-5'
                                     type="radio"
                                     label="No"
@@ -564,16 +576,55 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* the submit button */}
                     <Button
-                        type='submit'
-                        className='mb-5'
-                        onClick={applicationSubmit}
-                    >
-                        Submit My Application!
-                    </Button>     
+                        {...buttonProps}
+                    />  
                 </form>
 
             </Container>
-
+            {/* more needs to be done modal */}
+            <div className="modal fade" id="unfilledModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
+                            Not all required sections were filled out
+                        </h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                        <ul>
+                            {unfilledFields.map(field => (
+                                <li key={field}>{
+                                    field}
+                                </li>
+                        ))}
+                        </ul>                    
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            {/* submitted application modal */}
+            <div className="modal fade" id="submittedModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
+                            Your application has been submitted!
+                        </h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">               
+                        <p>We will be in touch with you soon as we can!</p>  
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

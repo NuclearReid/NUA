@@ -17,7 +17,6 @@ const applicationSchema = new Schema({
     SUD: String,
     facebook: String,
     firstPerson: String,
-    harmReduction: String,
     harmReductionEXP: String,
     harmReductionExplain: String,
     treatmentCenter: String,
