@@ -109,7 +109,6 @@ export const OPERATOR_APPLICATION = gql`
     $sud: String
     $facebook: String
     $firstPerson: String
-    $harmReduction: String
     $harmReductionExp: String
     $harmReductionExplain: String
     $mandatedReporter: String
@@ -135,7 +134,6 @@ export const OPERATOR_APPLICATION = gql`
       SUD: $sud
       facebook: $facebook
       firstPerson: $firstPerson
-      harmReduction: $harmReduction
       harmReductionEXP: $harmReductionExp
       harmReductionExplain: $harmReductionExplain
       mandatedReporter: $mandatedReporter
@@ -161,7 +159,6 @@ export const OPERATOR_APPLICATION = gql`
       SUD
       facebook
       firstPerson
-      harmReduction
       harmReductionEXP
       harmReductionExplain
       mandatedReporter
