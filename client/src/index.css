@@ -110,3 +110,23 @@
   transform: scale(1.1); /* Adjust the scale value as needed */
   transition: transform 0.3s ease-in-out;
 }
+
+
+
+/* May or may not use this for the schedule part of the application */
+/* The margins for the availbilty form */
+/* .wed-margin {
+  margin-right: 1rem;
+}
+.thurs-margin {
+  margin-right: 2.3rem;
+}
+.fri-margin {
+  margin-right: 4rem;
+}
+.sat-margin {
+  margin-right: 2.5rem;
+}
+.app-endCheck {
+  margin-left: 3rem;
+} */
