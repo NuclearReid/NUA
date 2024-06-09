@@ -36,7 +36,32 @@ export const QUERY_COMPLAINT = gql`
             impact
             suggestions
             confidentiality
-            }
+        }
     }
 `;
 
+export const QUERY_APPLICATION = gql`
+    query Application {
+        applications {
+            _id
+            email
+            name
+            over21
+            phoneNumber
+            resident
+            nightOwl
+            available
+            SUD
+            facebook
+            firstPerson
+            harmReduction
+            harmReductionEXP
+            harmReductionExplain
+            mandatedReporter
+            recovery
+            endGoal
+            specialSkills
+            why
+        }
+    }
+`;

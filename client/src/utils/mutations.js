@@ -90,3 +90,85 @@ export const DELETE_COMPLAINT = gql`
     }
   }
 `;
+
+export const OPERATOR_APPLICATION = gql`
+  mutation OperatorApplication(
+    $email: String
+    $name: String
+    $over21: String
+    $phoneNumber: String
+    $resident: String
+    $nightOwl: String
+    $monday: String
+    $tuesday: String
+    $wednesday: String
+    $thursday: String
+    $friday: String
+    $saturday: String
+    $sunday: String
+    $sud: String
+    $facebook: String
+    $firstPerson: String
+    $harmReduction: String
+    $harmReductionExp: String
+    $harmReductionExplain: String
+    $mandatedReporter: String
+    $recovery: String
+    $endGoal: String
+    $specialSkills: String
+    $why: String
+  ) {
+    addApplication(
+      email: $email
+      name: $name
+      over21: $over21
+      phoneNumber: $phoneNumber
+      resident: $resident
+      nightOwl: $nightOwl
+      monday: $monday
+      tuesday: $tuesday
+      wednesday: $wednesday
+      thursday: $thursday
+      friday: $friday
+      saturday: $saturday
+      sunday: $sunday
+      SUD: $sud
+      facebook: $facebook
+      firstPerson: $firstPerson
+      harmReduction: $harmReduction
+      harmReductionEXP: $harmReductionExp
+      harmReductionExplain: $harmReductionExplain
+      mandatedReporter: $mandatedReporter
+      recovery: $recovery
+      endGoal: $endGoal
+      specialSkills: $specialSkills
+      why: $why
+    ) {
+      _id
+      email
+      name
+      over21
+      phoneNumber
+      resident
+      nightOwl
+      monday
+      tuesday
+      wednesday
+      thursday
+      friday
+      saturday
+      sunday
+      SUD
+      facebook
+      firstPerson
+      harmReduction
+      harmReductionEXP
+      harmReductionExplain
+      mandatedReporter
+      recovery
+      endGoal
+      specialSkills
+      why
+    }
+  }
+`

@@ -1,4 +1,4 @@
-const { User, Complaint } = require('../models');
+const { User, Complaint, Application } = require('../models');
 const {signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -20,6 +20,9 @@ const resolvers = {
         },
         complaints: async () => {
             return Complaint.find();
+        },
+        applications: async () => {
+            return Application.find();
         }
     },
     
@@ -67,7 +70,12 @@ const resolvers = {
             const complaint = await Complaint.create({ ...args });
             return(complaint);
         },
-
+        
+        addApplication: async (parent, args) => {
+            const application = await Application.create({...args});
+            return(application);
+        },
+        
         deleteComplaint: async (parent, {_id} ) => {
             const complaint = await Complaint.findByIdAndDelete(_id);
             if(!complaint) {

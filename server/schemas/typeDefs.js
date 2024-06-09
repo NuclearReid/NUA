@@ -33,14 +33,21 @@ const typeDefs = gql`
         name: String
         over21: String
         phoneNumber: String
-        location: String
+        resident: String
         nightOwl: String
-        available: [String]
+        monday: String
+        tuesday: String
+        wednesday: String
+        thursday: String
+        friday: String
+        saturday: String
+        sunday: String
         SUD: String
         facebook: String
         firstPerson: String
         harmReduction: String
         harmReductionEXP: String
+        harmReductionExplain: String
         mandatedReporter: String
         recovery: String
         endGoal: String
@@ -58,6 +65,7 @@ const typeDefs = gql`
         me: User
         admin: User
         complaints: [Complaint]
+        applications: [Application]
     }
 
     type Mutation {
@@ -91,6 +99,33 @@ const typeDefs = gql`
             suggestions: String
             confidentiality: String
         ): Complaint
+
+        addApplication(
+            email: String
+            name: String
+            over21: String
+            phoneNumber: String
+            resident: String
+            nightOwl: String
+            monday: String
+            tuesday: String
+            wednesday: String
+            thursday: String
+            friday: String
+            saturday: String
+            sunday: String
+            SUD: String
+            facebook: String
+            firstPerson: String
+            harmReduction: String
+            harmReductionEXP: String
+            harmReductionExplain: String
+            mandatedReporter: String
+            recovery: String
+            endGoal: String
+            specialSkills: String
+            why: String
+        ): Application
 
         deleteComplaint(
             _id: ID
