@@ -82,6 +82,14 @@ const resolvers = {
                 throw new Error("can't find a complaint with that id")
             }
             return (complaint);
+        },
+
+        deleteApplication: async (parent, {_id}) => {
+            const application = await Application.findByIdAndDelete(_id);
+            if(!application){
+                throw new Error("Couldn't find the application with that id");
+            }
+            return (application)
         }
     }
 }

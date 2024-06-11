@@ -11,6 +11,7 @@ export default function GrievanceCardDisplay() {
     const {loading, data, error, refetch} = useQuery(QUERY_COMPLAINT);
 
     // Used to subtract 1 from the grievance card index.
+    // basically this controlls which spot in the carousel the user is on and if they delete a card, they won't be left looking at a blank card
     const [activeIndex, setActiveIndex] = useState(0);
     const handleSelect = (selectedIndex, e) => {
         setActiveIndex(selectedIndex);
@@ -22,7 +23,7 @@ export default function GrievanceCardDisplay() {
             <Container xs={12} md={4} className='carousel-container'
 
             >
-                {/* interval=null makes it so the carousel doesn't automatically cyle */}
+                {/* interval={null} makes it so the carousel doesn't automatically cyle */}
                 <Carousel 
                     activeIndex={activeIndex} 
                     onSelect={handleSelect} 

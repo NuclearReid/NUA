@@ -128,6 +128,10 @@ const typeDefs = gql`
         deleteComplaint(
             _id: ID
         ): Complaint
+
+        deleteApplication(
+            _id: ID
+        ): Application
     }
     scalar Date
 `;

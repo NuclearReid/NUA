@@ -317,9 +317,9 @@ export default function OperatorApplicationForm() {
                                     value={formState.SUD}
                                 >
                                         <option value="">Choose</option>
-                                        <option value="firstPerson">Yes, first hand lived experience</option>
-                                        <option value="thirdPerson">No, but I've been through it with a friend or family member</option>
-                                        <option value="noExperience">No, I have no experience with SUD</option>
+                                        <option value="First Person Experience">Yes, first hand lived experience</option>
+                                        <option value="Third Person Experience">No, but I've been through it with a friend or family member</option>
+                                        <option value="no Experience">No, I have no experience with SUD</option>
                                 </select>
                                 <label 
                                     className='form-label'
