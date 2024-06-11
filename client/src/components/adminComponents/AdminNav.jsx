@@ -17,14 +17,14 @@ export default function adminNav() {
                     <Navbar.Brand href="/adminportal">Admin Home</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
+
                     <Nav className="me-auto">
+                        <Nav.Link href="/adminportal/adminapplication">Operator Applications</Nav.Link>
                         <Nav.Link href="/adminportal/admingrievance">Grievances</Nav.Link>
                     </Nav>
+
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
                         <Nav.Link 
-                            // eventKey={2} 
-                            // href="#memes"
                             onClick={logoutOnClick}
                         >
                         Logout

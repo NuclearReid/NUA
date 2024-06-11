@@ -17,6 +17,7 @@ import Login from './pages/Login';
 import ParticipantGrievanceForm from "./pages/ParticipantGrievanceForm";
 import AdminNav from "./components/adminComponents/AdminNav";
 import OperatorApplication from "./pages/OperatorApplication";
+import AdminApplication from "./pages/AdminPortal/application";
 
 const ProtectedRoute = ({ children }) => {
   const isLoggedIn = Auth.loggedIn(); // Your auth check logic
@@ -58,6 +59,15 @@ const router = createBrowserRouter([
             <AdminGrievance />
           </ProtectedRoute>
         ),
+      },
+      {
+        path: "/adminportal/adminapplication",
+        element: (
+          <ProtectedRoute>
+            <AdminNav />
+            <AdminApplication />
+          </ProtectedRoute>
+        )
       },
       //////////////////////////////
       {
