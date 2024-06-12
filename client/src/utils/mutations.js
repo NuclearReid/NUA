@@ -125,6 +125,7 @@ export const OPERATOR_APPLICATION = gql`
     $endGoal: String
     $specialSkills: String
     $why: String
+    $mandysLine: String
   ) {
     addApplication(
       email: $email
@@ -150,6 +151,7 @@ export const OPERATOR_APPLICATION = gql`
       endGoal: $endGoal
       specialSkills: $specialSkills
       why: $why
+      mandysLine: $mandysLine
     ) {
       _id
       email
@@ -175,6 +177,7 @@ export const OPERATOR_APPLICATION = gql`
       endGoal
       specialSkills
       why
+      mandysLine
     }
   }
 `

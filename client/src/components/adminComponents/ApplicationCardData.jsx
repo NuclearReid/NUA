@@ -1,10 +1,10 @@
-import {Card, Container, Button, Row } from 'react-bootstrap'
+import {Card, Container, Button, Row, Col } from 'react-bootstrap'
 
 import {useMutation} from '@apollo/client';
 import { DELETE_APPLICATION } from '../../utils/mutations';
 
-export default function ApplicationCardData({application, index, refetch, setActiveIndex, activeIndex}) {
-    console.log(application)
+export default function ApplicationCardData({application, index, refetch, setActiveIndex, activeIndex, numberOfApplications}) {
+    // console.log(application)
 
     const [deleteApplication, {error}] = useMutation(DELETE_APPLICATION);
 
@@ -68,56 +68,65 @@ export default function ApplicationCardData({application, index, refetch, setAct
             <Container>
                 <Card className='p-5 m-0 m-md-5'
                 value={application._id}>
-                    <h2> Application for {application.name} </h2>
-                    {/* I don't think this id is used */}
-                    <p id='application-content'>
-                        <strong>Name:</strong> {application.name} <br/>
-                        <strong>Email:</strong> {application.email} <br/>
-                        <strong>Over 21?</strong> {application.over21} <br/>
-                        <strong>Phone Number: </strong>{application.phoneNumber} <br/>
-                        <strong>US resident?</strong> {application.resident} <br/>
-                        <strong>Night Owl?</strong> {application.nightOwl} <br/>
-                        <strong>Availability:</strong> 
-                            <ul>
-                                <li><strong>Monday:</strong> {application.monday}</li>
-                                <li><strong>Tuesday:</strong> {application.tuesday}</li>
-                                <li><strong>Wednesday:</strong> {application.wednesday}</li>
-                                <li><strong>Thursday:</strong> {application.thursday}</li>
-                                <li><strong>Friday:</strong> {application.friday}</li>
-                                <li><strong>Saturday:</strong> {application.saturday}</li>
-                                <li><strong>Sunday:</strong> {application.sunday}</li>
-                            </ul>
-                        <strong>SUD:</strong> {application.SUD} <br/>
-                        <strong>Facebook:</strong> {application.facebook} <br/>
-                        <strong>First Person:</strong> {application.firstPerson} <br/>
-                        <strong>Harm Reduction Experience:</strong> {application.harmReductionEXP} <br/>
-                        <strong>Harm Reduction Explanation:</strong> {application.harmReductionExplain} <br/>
-                        <strong>Treatment Center:</strong> {application.treatmentCenter} <br/>
-                        <strong>Mandated Reporter:</strong> {application.mandatedReporter} <br/>
-                        <strong>Recovery:</strong> {application.recovery} <br/>
-                        <strong>End Goal:</strong> {application.endGoal} <br/>
-                        <strong>Special Skills:</strong> {application.specialSkills} <br/>
-                        <strong>Why:</strong> {application.why} <br/>
-                    </p>
-                    <Row xs={12} md={4}>
-                        <Button
-                            className='m-3 p-'
-                            onClick={handleDownloadclick}
-                        >
-                            Download
-                        </Button>
-                        {/* <!-- Button trigger modal --> */}
-                        <Button 
-                            className='btn-danger'
-                            data-bs-toggle="modal"
-                            data-bs-target={`#deleteModal${application._id}`}
-                        >
-                            Delete
-                        </Button>
-                    </Row>
+                    <Col xs={12} md={6}>
+                        <Card.Body>
+                            <Card.Title> 
+                                Application for {application.name} they are {index+1} of {numberOfApplications}
+                            </Card.Title>
+                            {/* I don't think this id is used */}
+                            <Card.Text>
+                                <strong>Name:</strong> {application.name} <br/>
+                                <strong>Email:</strong> {application.email} <br/>
+                                <strong>Over 21?</strong> {application.over21} <br/>
+                                <strong>Phone Number: </strong>{application.phoneNumber} <br/>
+                                <strong>US resident?</strong> {application.resident} <br/>
+                                <strong>Night Owl?</strong> {application.nightOwl} <br/>
+                                <strong>Availability:</strong> 
+                                    <ul>
+                                        <li><strong>Monday:</strong> {application.monday}</li>
+                                        <li><strong>Tuesday:</strong> {application.tuesday}</li>
+                                        <li><strong>Wednesday:</strong> {application.wednesday}</li>
+                                        <li><strong>Thursday:</strong> {application.thursday}</li>
+                                        <li><strong>Friday:</strong> {application.friday}</li>
+                                        <li><strong>Saturday:</strong> {application.saturday}</li>
+                                        <li><strong>Sunday:</strong> {application.sunday}</li>
+                                    </ul>
+                                <strong>SUD:</strong> {application.SUD} <br/>
+                                <strong>Facebook:</strong> {application.facebook} <br/>
+                                <strong>Understand what First Person language means:</strong> {application.firstPerson} <br/>
+                                <strong>Harm Reduction Experience:</strong> {application.harmReductionEXP} <br/>
+                                <strong>Harm Reduction Explanation:</strong> {application.harmReductionExplain} <br/>
+                                <strong>Treatment Center:</strong> {application.treatmentCenter} <br/>
+                                <strong>Mandated Reporter:</strong> {application.mandatedReporter} <br/>
+                                <strong>Recovery:</strong> {application.recovery} <br/>
+                                <strong>End Goal:</strong> {application.endGoal} <br/>
+                                <strong>Special Skills:</strong> {application.specialSkills} <br/>
+                                <strong>Why:</strong> {application.why} <br/>
+                            </Card.Text>
+                        </Card.Body>
+                    </Col>
+                    <Col xs={12} md={4}>
+                        {/* <Card.Footer> */}
+                            <Row xs={1} md={2}>
+                                <Button
+                                    className='m-md-3'
+                                    onClick={handleDownloadclick}
+                                >
+                                    Download
+                                </Button>
+                                {/* <!-- Button trigger modal --> */}
+                                <Button 
+                                    className='btn-danger ms-md-3 mt-2 mt-md-0'
+                                    data-bs-toggle="modal"
+                                    data-bs-target={`#deleteModal${application._id}`}
+                                >
+                                    Delete
+                                </Button>
+                            </Row>
+                        {/* </Card.Footer>     */}
+                    </Col>               
                 </Card>
             </Container>
-
             <div 
                 className="modal fade" 
                 id={`deleteModal${application._id}`}

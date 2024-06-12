@@ -67,6 +67,7 @@ export const QUERY_APPLICATIONS = gql`
             endGoal
             specialSkills
             why
+            mandysLine
         }
     }
 `;

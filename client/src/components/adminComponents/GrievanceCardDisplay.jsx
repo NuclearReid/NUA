@@ -38,6 +38,7 @@ export default function GrievanceCardDisplay() {
                                 refetch={refetch}
                                 setActiveIndex={setActiveIndex}
                                 activeIndex={activeIndex}
+                                numberOfGrievances={data.complaints.length}
                             />
                         </Carousel.Item>
                     ))}

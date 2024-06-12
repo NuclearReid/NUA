@@ -37,12 +37,13 @@ export default function OperatorApplicationForm() {
         recovery: '',
         endGoal: '',
         specialSkills: '',
-        why: ''
+        why: '',
+        mandysLine: ''
     });
     
     // makes sure all the required sections are filled out
     useEffect(() => {
-        const fieldsToValidate = ['email', 'name', 'over21', 'phoneNumber', 'resident', 'nightOwl', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'SUD', 'firstPerson', 'harmReductionEXP', 'treatmentCenter', 'mandatedReporter', 'recovery', 'endGoal', 'why']
+        const fieldsToValidate = ['email', 'name', 'over21', 'phoneNumber', 'resident', 'nightOwl', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'SUD', 'firstPerson', 'harmReductionEXP', 'treatmentCenter', 'mandatedReporter', 'recovery', 'endGoal', 'why', 'mandysLine']
         // basically cycles through the required fields and if they're all filled in then 'isAllFilled is true and the submit button will submit to the database
         const isAllFilled = fieldsToValidate.every(key => formState[key].trim() !== '');
         // I'm checking which ones haven't been filled so i can send that data to the modal & make it easy for the user to see what they left out
@@ -92,7 +93,8 @@ export default function OperatorApplicationForm() {
                 recovery: '',
                 endGoal: '',
                 specialSkills: '',
-                why: ''
+                why: '',
+                mandysLine: '',
             });
         } catch (error) {
             console.error(error)
@@ -168,6 +170,34 @@ export default function OperatorApplicationForm() {
                                     value={formState.phoneNumber}
                                     onChange={handleChange}
                                 />                        
+                        </Col>
+                    </Row>
+                    {/* type of application */}
+                    <Row>
+                        <Col className='mb-3' xs={12} md={5}>
+                            <label className='form-label fs-3'>
+                                Is this application for the NUA hotline, Mandy's Line, or both <span style={{color: 'red'}}>*</span>
+                            </label>
+                            <div className="form-floating">
+                                <select
+                                    name='mandysLine' 
+                                    className="form-select" 
+                                    aria-label="Floating label select example"
+                                    onChange={handleChange}
+                                    value={formState.SUD}
+                                >
+                                        <option value="">Choose</option>
+                                        <option value="The NUA hotline">The NUA Hotline</option>
+                                        <option value="Mandy's Line">Mandy's Line</option>
+                                        <option value="Both">Both</option>
+                                </select>
+                                <label 
+                                    className='form-label'
+                                    htmlFor='floatingSelect'
+                                >
+                                    Required
+                                </label>
+                            </div>
                         </Col>
                     </Row>
                     {/* over 21? checked and onChange done*/}

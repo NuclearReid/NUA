@@ -9,7 +9,7 @@ import { QUERY_APPLICATIONS } from '../../utils/queries';
 export default function ApplicationCardDisplay() {
 
     const {loading, data, error, refetch} = useQuery(QUERY_APPLICATIONS);
-    // console.log(data);
+    console.log(data);
 
     const [activeIndex, setActiveIndex] = useState(0);
     const handleSelect = (selectedIndex, e) => {
@@ -19,8 +19,13 @@ export default function ApplicationCardDisplay() {
 
     return (
         <>
-            <Container xs={12} md={4} className='carousel-container'>
+            <Container
+                
+                className='carousel-container'
+            >
                 <Carousel
+                    xs={12}
+                    md={4}
                     activeIndex={activeIndex}
                     onSelect={handleSelect}
                     interval={null}
@@ -33,6 +38,7 @@ export default function ApplicationCardDisplay() {
                                 refetch={refetch}
                                 setActiveIndex={setActiveIndex}
                                 activeIndex={activeIndex}
+                                numberOfApplications={data.applications.length}
                             />
                         </Carousel.Item>
                     ))}
