@@ -91,6 +91,15 @@ export const DELETE_COMPLAINT = gql`
   }
 `;
 
+export const DELETE_APPLICATION = gql`
+  mutation DeleteApplication($_id: ID) {
+    deleteApplication(_id: $_id){
+      _id
+      name
+    }
+  }
+`;
+
 export const OPERATOR_APPLICATION = gql`
   mutation OperatorApplication(
     $email: String
@@ -106,16 +115,17 @@ export const OPERATOR_APPLICATION = gql`
     $friday: String
     $saturday: String
     $sunday: String
-    $sud: String
+    $SUD: String
     $facebook: String
     $firstPerson: String
-    $harmReductionExp: String
+    $harmReductionEXP: String
     $harmReductionExplain: String
     $mandatedReporter: String
     $recovery: String
     $endGoal: String
     $specialSkills: String
     $why: String
+    $mandysLine: String
   ) {
     addApplication(
       email: $email
@@ -131,16 +141,17 @@ export const OPERATOR_APPLICATION = gql`
       friday: $friday
       saturday: $saturday
       sunday: $sunday
-      SUD: $sud
+      SUD: $SUD
       facebook: $facebook
       firstPerson: $firstPerson
-      harmReductionEXP: $harmReductionExp
+      harmReductionEXP: $harmReductionEXP
       harmReductionExplain: $harmReductionExplain
       mandatedReporter: $mandatedReporter
       recovery: $recovery
       endGoal: $endGoal
       specialSkills: $specialSkills
       why: $why
+      mandysLine: $mandysLine
     ) {
       _id
       email
@@ -166,6 +177,7 @@ export const OPERATOR_APPLICATION = gql`
       endGoal
       specialSkills
       why
+      mandysLine
     }
   }
 `

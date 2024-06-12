@@ -24,7 +24,8 @@ const applicationSchema = new Schema({
     recovery: String,
     endGoal: String,
     specialSkills: String,
-    why: String
+    why: String,
+    mandysLine: String
 });
 
 

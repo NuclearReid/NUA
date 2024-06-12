@@ -52,6 +52,7 @@ const typeDefs = gql`
         endGoal: String
         specialSkills: String
         why: String
+        mandysLine: String
     }
 
     type Auth {
@@ -123,11 +124,16 @@ const typeDefs = gql`
             endGoal: String
             specialSkills: String
             why: String
+            mandysLine: String
         ): Application
 
         deleteComplaint(
             _id: ID
         ): Complaint
+
+        deleteApplication(
+            _id: ID
+        ): Application
     }
     scalar Date
 `;

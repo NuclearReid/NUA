@@ -40,8 +40,8 @@ export const QUERY_COMPLAINT = gql`
     }
 `;
 
-export const QUERY_APPLICATION = gql`
-    query Application {
+export const QUERY_APPLICATIONS = gql`
+    query ApplicationQuery {
         applications {
             _id
             email
@@ -50,7 +50,13 @@ export const QUERY_APPLICATION = gql`
             phoneNumber
             resident
             nightOwl
-            available
+            monday
+            tuesday
+            wednesday
+            thursday
+            friday
+            saturday
+            sunday
             SUD
             facebook
             firstPerson
@@ -61,6 +67,7 @@ export const QUERY_APPLICATION = gql`
             endGoal
             specialSkills
             why
+            mandysLine
         }
     }
 `;

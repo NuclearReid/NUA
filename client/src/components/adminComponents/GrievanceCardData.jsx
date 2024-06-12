@@ -1,4 +1,4 @@
-import {Card, Container, Button, Row} from 'react-bootstrap'
+import {Card, Container, Button, Row, Col} from 'react-bootstrap'
 import dayjs from 'dayjs';
 import {useState} from 'react'
 
@@ -6,7 +6,7 @@ import { useMutation } from '@apollo/client';
 import { DELETE_COMPLAINT } from '../../utils/mutations';
 
 
-export default function GrievanceCardData ({complaint, index, refetch, setActiveIndex, activeIndex}) {
+export default function GrievanceCardData ({complaint, index, refetch, setActiveIndex, activeIndex, numberOfGrievances}) {
     // console.log(complaint);
     const date = dayjs(complaint.date).format('MM/DD/YYYY')
 
@@ -62,7 +62,7 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
                 <Card  className='p-5 m-0 m-md-5'
                     value={complaint._id}
                 >
-                    <h2>Grievance Card {index +1 }</h2>
+                    <h2>Grievance Card {index +1 } of {numberOfGrievances}</h2>
                     <p id='grievance-content'>
                         Name: {complaint.firstName} {complaint.lastName} <br/>
                         Email: {complaint.email} <br/>
@@ -76,23 +76,73 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
                         Time: {complaint.time} <br/>
                         Date: {date}
                     </p>
-                    <Row xs={12} md={4}>
-                        {/* the download or delete buttons */}
-                        <Button 
-                            className='btn-primary m-3'
-                            onClick={handleDownloadClick}
-                        >
-                            Download
-                        </Button>
-                        <Button 
-                            className='btn-danger m-3'
-                            onClick={handleDeleteClick}
-                        >
-                            Delete Grievance
-                        </Button>
-                    </Row>
+                    <Col xs={12} md={4}>
+                        <Row xs={1} md={2}>
+                            {/* the download or delete buttons */}
+                            <Button 
+                                className='btn-primary m-3'
+                                onClick={handleDownloadClick}
+                            >
+                                Download
+                            </Button>
+                            <Button 
+                                className='btn-danger ms-md-3 mt-2 mt-md-0'
+                                data-bs-toggle="modal"
+                                data-bs-target={`#deleteModal${complaint._id}`}
+                            >
+                                Delete Grievance
+                            </Button>
+                        </Row>
+                    </Col>
                 </Card>
             </Container>
+
+            <div 
+                className="modal fade" 
+                id={`deleteModal${complaint._id}`}
+                tabIndex="-1" 
+                aria-labelledby="exampleModalLabel" 
+                aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 
+                            className="modal-title fs-5"
+                            id="exampleModalLabel"
+                        >
+                            Delete the Grievance for {complaint.firstName} {complaint.lastName}?
+                        </h1>
+                        <button 
+                        type="button" 
+                        className="btn-close" 
+                        data-bs-dismiss="modal" 
+                        aria-label="Close"
+                        />
+                    </div>
+                    <div className="modal-body">
+                        Are you sure you want to delete this grievance? It can't be undone.
+                    </div>
+                    <div className="modal-footer">
+                        <button 
+                            type="button danger"
+                            data-bs-dismiss="modal" 
+                            onClick={handleDeleteClick}
+                            className="btn btn-danger"
+                        >
+                            I'm sure, delete {complaint.firstName}'s grievance
+                        </button>
+                        <button 
+                            type="button" 
+                            className="btn btn-secondary" data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        
+                    </div>
+                    </div>
+                </div>
+            </div>
+
         </>
     )
 }
