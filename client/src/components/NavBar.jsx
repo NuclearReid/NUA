@@ -3,9 +3,7 @@ import logo from '../../src/assets/logo.png'
 import FAQ from '../components/FAQ'
 import { Link } from 'react-router-dom';
 
-
 export default function NavBar() {
-    
     
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -47,9 +45,6 @@ export default function NavBar() {
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">12 Step Alternatives</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Mandy's Line Application</a>
                     </li>
                     <li className="nav-item">
                         <a 

@@ -27,6 +27,7 @@ export default function ApplicationCardData({application, index, refetch, setAct
         const applicationContent = `
             Name: ${application.name}
             Email: ${application.email}
+            NUA or Mandy's Line: ${application.mandysLine}
             Over 21?: ${application.over21}
             Phone Number: ${application.phoneNumber}
             US resident?: ${application.resident}
@@ -77,6 +78,7 @@ export default function ApplicationCardData({application, index, refetch, setAct
                             <Card.Text>
                                 <strong>Name:</strong> {application.name} <br/>
                                 <strong>Email:</strong> {application.email} <br/>
+                                <strong>NUA or Mandy's Line:</strong> {application.mandysLine} <br/>
                                 <strong>Over 21?</strong> {application.over21} <br/>
                                 <strong>Phone Number: </strong>{application.phoneNumber} <br/>
                                 <strong>US resident?</strong> {application.resident} <br/>
