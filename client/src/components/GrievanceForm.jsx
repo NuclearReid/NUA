@@ -76,7 +76,7 @@ export default function GrievanceForm() {
     // this is used with the useEffect. basically, if all the required sections are filled out then the button submits. if not, the button triggers the modal
     const buttonProps = allFilled
             ? { onClick: grievanceSubmit, type: 'submit', className: 'btn btn-primary', 'data-bs-toggle': 'modal', 'data-bs-target': '#submittedModal', children: 'Send my grievance' }
-            : { type: 'button', className: 'btn btn-primary', 'data-bs-toggle': 'modal', 'data-bs-target': '##unfilledModal', children:'Click me to see what still needs to be completed' };
+            : { type: 'button', className: 'btn btn-primary', 'data-bs-toggle': 'modal', 'data-bs-target': '#unfilledModal', children:'Click me to see what still needs to be completed' };
 
     return(
         <>
@@ -88,7 +88,7 @@ export default function GrievanceForm() {
                 >
                     {/* The person's name */}
                     <Row>
-                        <Col className='mb-3' xs={12} md={3}>
+                        <Col className='mb-3' xs={12} md={7}>
                             <label htmlFor="firstNameInput form-label" className="form-label">
                                 First Name
                             </label>
@@ -104,7 +104,7 @@ export default function GrievanceForm() {
                             <div className="form-text">Optional</div>
 
                         </Col>
-                        <Col className='mb-3' xs={12} md={3}>
+                        <Col className='mb-3' xs={12} md={7}>
                             <label htmlFor="lastNameInput form-label" className="form-label">
                                 Last Name
                             </label>
@@ -122,7 +122,7 @@ export default function GrievanceForm() {
                     </Row>
                     {/* Their email */}
                     <Row>
-                        <Col className='mb-3' xs={12} md={3}>
+                        <Col className='mb-3' xs={12} md={7}>
                             <label htmlFor="emailInput" className="form-label">
                                 Email
                             </label>
@@ -139,7 +139,7 @@ export default function GrievanceForm() {
                         </Col>
                         {/* Their phone number */}
                         {/*  Need to force the phone number syntax later on */}
-                        <Col className='mb-3' xs={12} md={3}>
+                        <Col className='mb-3' xs={12} md={7}>
                             <label htmlFor="phoneNumberInput" className="form-label">
                                 Phone Number
                             </label>
@@ -157,37 +157,32 @@ export default function GrievanceForm() {
                     </Row>
                     {/* Date and Time of the call */}
                     <Row className='mb-3'>
-                        <Col xs={12} md={3}>
+                        <Col xs={12} md={6}>
                             <label className='p-2' htmlFor="dateOfCall">Date of Call: <span style={{color: 'red'}}>*</span> </label>
-                            <Col xs={12} md={3}>
-                                <input
-                                    name="date" 
-                                    type="date" 
-                                    id="dateOfCall"
-                                    value={formState.date}
-                                    onChange={handleChange}
-                                    required 
-                                />
-                            </Col>
-                            
+                            <input
+                                name="date" 
+                                type="date" 
+                                id="dateOfCall"
+                                value={formState.date}
+                                onChange={handleChange}
+                                required 
+                            />
                             <div className="form-text">What day was the call?</div>
                         </Col>
-                        <Col xs={12} md={3}>
+                        <Col xs={12} md={6}>
                             <label className='p-2' htmlFor='timeOfCall'> Time of Call: <span style={{color: 'red'}}>*</span> </label>
-                            <Col xs={12} md={3}>
-                                <input 
-                                    name='time'
-                                    type='time' 
-                                    id='timeOfCall' 
-                                    value={formState.time}
-                                    onChange={handleChange}
-                                    required 
-                                />
-                            </Col>
-                            
+                            <input 
+                                name='time'
+                                type='time' 
+                                id='timeOfCall' 
+                                value={formState.time}
+                                onChange={handleChange}
+                                required 
+                            />
                             <div className="form-text">What time was the call?</div>                        
                         </Col>
                     </Row>
+
                     {/* The nature of Grievance (checkboxes) */}
                     <Row className="mb-3">
                         <Col xs={12} md={6}>
@@ -256,7 +251,7 @@ export default function GrievanceForm() {
                     </Row>
                     {/* Names of the people involved */}
                     <Row className="mb-3">
-                        <Col xs={12} md={6} className='form-check'>
+                        <Col xs={12} md={10} className='form-check'>
                             <label htmlFor="namesOfInvolved" className="form-label"> 
                                 Who was involved?<span style={{color: 'red'}}>*</span> 
                             </label>
@@ -273,7 +268,7 @@ export default function GrievanceForm() {
                     </Row>
                     {/* Description of the Grievance */}
                     <Row className="mb-3">
-                        <Col xs={12} md={6} className='form-check'>
+                        <Col xs={12} md={10} className='form-check'>
                             <label htmlFor="grievanceTextArea" className="form-label"> 
                                 Describe your grievance<span style={{color: 'red'}}>*</span> 
                             </label>
@@ -291,7 +286,7 @@ export default function GrievanceForm() {
                     </Row>
                     {/* Impact on you */}
                     <Row className="mb-3">
-                        <Col xs={12} md={6} className='form-check'>
+                        <Col xs={12} md={10} className='form-check'>
                             <label htmlFor="impactTextArea" className="form-label"> 
                                 Impact on you<span style={{color: 'red'}}>*</span> 
                             </label>
@@ -311,7 +306,7 @@ export default function GrievanceForm() {
                     <h2 className='border-bottom p-3'> Other information </h2>
                     {/* Suggestions for Improvement */}
                     <Row className='mb-3'>
-                        <Col xs={12} md={6}>
+                        <Col xs={12} md={10}>
                         <label htmlFor="suggestionsTextArea" className="form-label"> 
                             Suggestions for Improvement
                         </label>
@@ -328,7 +323,7 @@ export default function GrievanceForm() {
                     </Row>
                     {/* Confidentiality */}
                     <Row className='mb-3'>
-                        <Col xs={12} md={6}>
+                        <Col xs={12} md={10}>
                         <label htmlFor="confidentialityTextArea" className="form-label"> 
                             Confidentialty <span style={{color: 'red'}}>*</span> 
                         </label>

@@ -123,3 +123,14 @@
   }
 }
 
+@media (min-width: 576px){
+  .scrollable-grievance{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    height: 70vh;
+    width: 50vw;
+    padding: 1rem;
+  }
+}
