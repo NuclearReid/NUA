@@ -9,12 +9,12 @@ export default function StaffPics() {
         <>
             <h2 className='text-center mt-5'> Meet our Professional Team</h2>
             <Row className='p-5'>
-
                     <Col xs={12} md={4} className='hover-grow'>
                         <picture>
-                            <img src={KelseyHeadShot} className="headShotImg rounded-circle float-start p-5" alt="Headshot of kelsey"/>
+                            <img src={KelseyHeadShot} className="headShotImg rounded-circle  p-md-5 img-fluid" alt="Headshot of kelsey"/>
                         </picture>
                         <h3 className='text-center fs-1'>Kelsey Burger</h3>
+                        <h4><strong>Get an image thats a square to make this look better</strong></h4>
                         <h4 className='mb-3 fs-4'>
                             Director Of Operations at NUA, & Volunteer Coordinator for Mandy’s Line
                         </h4>
@@ -24,7 +24,7 @@ export default function StaffPics() {
                     </Col>
                     <Col xs={12} md={4} className='hover-grow'>
                         <picture>
-                            <img src={MariamHeadShot} className="headShotImg rounded-circle float-start p-5" alt="Headshot of kelsey"/>
+                            <img src={MariamHeadShot} className="headShotImg rounded-circle p-md-5 img-fluid" alt="Headshot of kelsey"/>
                         </picture>
                         <h3 className='text-center'>Mariam Riley</h3>
                         <h4 className='mb-3 fs-4'>
@@ -37,7 +37,7 @@ export default function StaffPics() {
                     </Col>
                     <Col xs={12} md={4} className='hover-grow'>
                         <picture>
-                            <img src={MikeHeadShot} className="headShotImg rounded-circle float-start p-5" alt="Headshot of kelsey"/>
+                            <img src={MikeHeadShot} className="headShotImg rounded-circle p-md-5 img-fluid" alt="Headshot of kelsey"/>
                         </picture>
                         <h3 className='text-center'>Mike</h3>
                         <h4 className='mb-3 fs-4'>
@@ -47,10 +47,7 @@ export default function StaffPics() {
                             Mike is the founder of NUA, a harm reductionist, and person with lived experience in IV drug use. Outside of NUA, he's a father to two awesome kids, a 23yr old son, and a 9yr old daughter. 
                         </p>
                     </Col>
-
-            </Row>
-            
-            
+            </Row> 
         </>
     )
 }

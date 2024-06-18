@@ -20,7 +20,7 @@ export default function FAQ() {
         },
         {
             question: 'How can you guarantee that the police will not respond, and I end up in trouble?',
-            answer: 'All operators are harm reductionists. <b>Our goal is to reduce harm, not increase it, by getting you arrested.</b> Our hope is that only EMS responds, but the truth is, we cannot guarantee that. To reduce the chances of the police showing up with EMS, when we call EMS, we report it as an “unresponsive person”, rather than an “overdose”. When you call 911 and report an “overdose”, a lot of times, police will automatically respond to those calls. So, by reporting it as an “unresponsive person” it reduces the chances of police responding.'
+            answer: 'All operators are harm reductionists. <strong>Our goal is to reduce harm, not increase it, by getting you arrested.</strong> Our hope is that only EMS responds, but the truth is, we cannot guarantee that. To reduce the chances of the police showing up with EMS, when we call EMS, we report it as an “unresponsive person”, rather than an “overdose”. When you call 911 and report an “overdose”, a lot of times, police will automatically respond to those calls. So, by reporting it as an “unresponsive person” it reduces the chances of police responding.'
         },
         {
             question: 'If you have to contact EMS, how do you do that?',
@@ -36,7 +36,7 @@ export default function FAQ() {
         },
         {
             question: 'Will you try to push me into going to rehab?',
-            answer: ' No. We realize that you will only quit when you’re ready, not when we’re ready. We will <b>NEVER</b> try to push you to seek treatment. If you are interested in seeking help though, we have a list of free/low cost, and state funded programs / facilities throughout the country. We will help you find whatever type of treatment you think you need, if/when you’re ready. If you would like to see our treatment resources file, you can download the entire zip file by clicking here. If you want assistance in locating a harm reduction program in your state, to help reduce the dangers of drug use, we’ll assist you with that as well. If we aren’t aware of any HR programs in your state, we usually refer callers to the Free Narcan and Harm Reduction Services page on FaceBook. They have a list of harm reduction organizations throughout the US.'
+            answer: ' No. We realize that you will only quit when you’re ready, not when we’re ready. We will <strong>NEVER</strong> try to push you to seek treatment. If you are interested in seeking help though, we have a list of free/low cost, and state funded programs / facilities throughout the country. We will help you find whatever type of treatment you think you need, if/when you’re ready. If you would like to see our treatment resources file, you can download the entire zip file by clicking here. If you want assistance in locating a harm reduction program in your state, to help reduce the dangers of drug use, we’ll assist you with that as well. If we aren’t aware of any HR programs in your state, we usually refer callers to the Free Narcan and Harm Reduction Services page on FaceBook. They have a list of harm reduction organizations throughout the US.'
         },
         {
             question: 'Is this available 24/7?',

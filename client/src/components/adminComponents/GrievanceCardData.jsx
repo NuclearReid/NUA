@@ -80,13 +80,13 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
                         <Row xs={1} md={2}>
                             {/* the download or delete buttons */}
                             <Button 
-                                className='btn-primary m-3'
+                                className='btn-primary m-3 z-3'
                                 onClick={handleDownloadClick}
                             >
                                 Download
                             </Button>
                             <Button 
-                                className='btn-danger ms-md-3 mt-2 mt-md-0'
+                                className='btn-danger ms-md-3 mt-2 mt-md-0 z-3'
                                 data-bs-toggle="modal"
                                 data-bs-target={`#deleteModal${complaint._id}`}
                             >
@@ -133,7 +133,8 @@ export default function GrievanceCardData ({complaint, index, refetch, setActive
                         </button>
                         <button 
                             type="button" 
-                            className="btn btn-secondary" data-bs-dismiss="modal"
+                            className="btn btn-secondary" 
+                            data-bs-dismiss="modal"
                         >
                             Close
                         </button>

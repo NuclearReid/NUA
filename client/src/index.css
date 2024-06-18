@@ -100,10 +100,11 @@
 
 /* Staff headshots */
 .headShotImg {
-  border-radius: 50%; /* This makes the image circular */
-  width: 30rem; /* Adjust the size as needed */
-  height: 30rem; /* Adjust the size as needed */
-  object-fit: cover; /* This will ensure the image covers the area without being stretched */
+  border-radius: 50%; 
+  width: 100%; 
+  max-width: 30rem; 
+  height: auto; 
+  object-fit: cover; 
 }
 
 .hover-grow:hover{
