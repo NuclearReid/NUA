@@ -37,7 +37,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <NavBar className='container-fluid mb-3'/>
-      <div className='outletStyle' >
+      <div className='outletStyle flex-grow-1'>
         <Outlet />
       </div>
       <Footer />

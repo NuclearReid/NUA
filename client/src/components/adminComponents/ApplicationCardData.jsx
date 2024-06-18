@@ -111,14 +111,14 @@ export default function ApplicationCardData({application, index, refetch, setAct
                         {/* <Card.Footer> */}
                             <Row xs={1} md={2}>
                                 <Button
-                                    className='m-md-3'
+                                    className='m-md-3 z-3'
                                     onClick={handleDownloadclick}
                                 >
                                     Download
                                 </Button>
                                 {/* <!-- Button trigger modal --> */}
                                 <Button 
-                                    className='btn-danger ms-md-3 mt-2 mt-md-0'
+                                    className='btn-danger ms-md-3 mt-2 mt-md-0 z-3'
                                     data-bs-toggle="modal"
                                     data-bs-target={`#deleteModal${application._id}`}
                                 >

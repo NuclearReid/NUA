@@ -18,6 +18,7 @@ import ParticipantGrievanceForm from "./pages/ParticipantGrievanceForm";
 import AdminNav from "./components/adminComponents/AdminNav";
 import OperatorApplication from "./pages/OperatorApplication";
 import AdminApplication from "./pages/AdminPortal/application";
+import ParticipantRights from "./pages/ParticipantRights";
 
 const ProtectedRoute = ({ children }) => {
   const isLoggedIn = Auth.loggedIn(); // Your auth check logic
@@ -79,12 +80,16 @@ const router = createBrowserRouter([
         element: <Resources />,
       },
       {
-        path: '/particpantGrievanceForm',
+        path: '/participantGrievanceForm',
         element: <ParticipantGrievanceForm />
       },
       {
         path: '/operatorapplication',
         element: <OperatorApplication />
+      },
+      {
+        path: '/participantRights',
+        element: <ParticipantRights /> 
       }
 
     ],

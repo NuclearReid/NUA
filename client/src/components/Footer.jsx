@@ -1,4 +1,5 @@
 import NUAlogo from '../../src/assets/logo.png'
+import {Link} from 'react-router-dom'
 export default function Footer() {
     return(
         <>
@@ -8,7 +9,13 @@ export default function Footer() {
                     {/* have the facebook logo */}
                     <ul>
                         <li>
-                            Participant's Rights
+                            Connect with us on Facebook!
+                        </li>
+                        <li>
+                            <Link className='nav-link active' to="/participantRights">
+                                Participant's Rights
+                            </Link>
+                            
                         </li>
                         <li>
                             12 Step alternatives
