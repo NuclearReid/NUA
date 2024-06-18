@@ -111,22 +111,15 @@
   transition: transform 0.3s ease-in-out;
 }
 
+@media (min-width: 576px){
+  .scrollable-application{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    height: 50vh;
+    width: 50vw;
+    padding: 1rem;
+  }
+}
 
-
-/* May or may not use this for the schedule part of the application */
-/* The margins for the availbilty form */
-/* .wed-margin {
-  margin-right: 1rem;
-}
-.thurs-margin {
-  margin-right: 2.3rem;
-}
-.fri-margin {
-  margin-right: 4rem;
-}
-.sat-margin {
-  margin-right: 2.5rem;
-}
-.app-endCheck {
-  margin-left: 3rem;
-} */

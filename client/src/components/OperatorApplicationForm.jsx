@@ -113,7 +113,7 @@ export default function OperatorApplicationForm() {
             <Container>
                 {/* The application title */}
                 <Row>
-                    <Col xs={12} md={5}>
+                    <Col xs={12} md={12}>
                         <h1>Operator Application Form </h1>
                     </Col>
                 </Row>
@@ -122,7 +122,7 @@ export default function OperatorApplicationForm() {
                 <form>
                     {/* Their name value and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'> 
                                 Name <span style={{color: 'red'}}>*</span>
                             </label>
@@ -138,7 +138,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* Theie email  value and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Email<span style={{color: 'red'}}>*</span>    
                             </label>
@@ -155,7 +155,7 @@ export default function OperatorApplicationForm() {
                     </Row>          
                     {/* their phone number value and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                                 <label className='form-label fs-3'>
                                     Phone Number <span style={{color: 'red'}}>*</span>
                                 </label>
@@ -174,7 +174,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* type of application */}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Is this application for the NUA hotline, Mandy's Line, or both <span style={{color: 'red'}}>*</span>
                             </label>
@@ -203,7 +203,7 @@ export default function OperatorApplicationForm() {
                     {/* over 21? checked and onChange done*/}
                     {/* the radio buttons are set up so if their checked it sets the formState (over21 in this case) to either yes or no */}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Are you 21 or over? <span style={{color: 'red'}}>*</span>
                             </label>
@@ -231,7 +231,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* us resident checked and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Do you live within the US? <span style={{color: 'red'}}>*</span>
                             </label>
@@ -262,7 +262,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* night Owl? checked and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Are you a night owl? <span style={{color: 'red'}}>*</span>
                             </label>
@@ -294,7 +294,7 @@ export default function OperatorApplicationForm() {
                     {/* time available checked and onChange done*/}
                     {/* this is ugly and needs to be cleaned up */}
                     <Row>
-                        <Col xs={12} md={5}>
+                        <Col xs={12} md={12}>
                             <h3> What is Your Availability <span style={{color: 'red'}}>*</span></h3>
                             {daysOfWeek.map(day => (    
                                     <FormGroup className='mb-3' key={day}>                        
@@ -331,7 +331,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* Experience in SUD select and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Do you have lived experience in SUD? <span style={{color: 'red'}}>*</span>
                             </label>
@@ -362,7 +362,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* Facebookpage? value and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Do you have a Facebook Page?
                             </label>
@@ -381,7 +381,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* first person langauge checked and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Do you know what first person language is?<span style={{color: 'red'}}>*</span>
                             </label>
@@ -411,7 +411,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* harm reduction exp checked and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={6}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Do you know have harm reduction experience?<span style={{color: 'red'}}>*</span>
                             </label>
@@ -441,7 +441,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* said use to harm reduction? explain value and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 If you answered yes above, please explain here.
                             </label>
@@ -457,7 +457,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* treatment center checked and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                         <label className='form-label fs-3'>
                             Are you in ANY WAY affiliated with a treatment center?<span style={{color: 'red'}}>*</span>
                             </label>
@@ -487,7 +487,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* Mandated Reporter checked and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                         <label className='form-label fs-3'>
                             Are you a mandated reporter?<span style={{color: 'red'}}>*</span>
                         </label>
@@ -520,7 +520,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* What does Recovery mean? value and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 What does recovery mean to you?<span style={{color: 'red'}}>*</span>
                             </label>
@@ -534,7 +534,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* the end goal! options and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                         <label className='form-label fs-3'>
                         Do you think that a person who uses drugs, should have an end goal of complete abstinence?<span style={{color: 'red'}}>*</span>
                             </label>
@@ -574,7 +574,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* Special Skills value and onChange done*/}
                     <Row>
-                        <Col className='mb-3' xs={12} md={5}>
+                        <Col className='mb-3' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Do you have any special skills?
                             </label>
@@ -592,7 +592,7 @@ export default function OperatorApplicationForm() {
                     </Row>
                     {/* why do you want to be an NUA operator? value and onChange done*/}
                     <Row>
-                        <Col className='mb-5' xs={12} md={5}>
+                        <Col className='mb-5' xs={12} md={12}>
                             <label className='form-label fs-3'>
                                 Why do you want to be an NUA operator? <span style={{color: 'red'}}>*</span>
                             </label>
